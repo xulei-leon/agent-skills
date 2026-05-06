@@ -17,7 +17,7 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 - Each UT must trace to a specific US acceptance criterion
 
 ### Step 3: Implement Code
-- Use the `code-impl` skill
+- Use the `programmer` skill
 - Input: milestone specs + UT cases
 - Output: `src/` implementation files
 - Follow SAD architecture and module boundaries
@@ -25,26 +25,32 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 
 ### Step 4: Run Unit Tests
 - Run `npm test` (or language-appropriate test command)
-- If any UT fails: fix implementation → rerun until all pass
+- If any UT case fails: fix implementation → re-run until all pass
 
-### Step 5: Git Commit
+### Step 5: Code Review
+- Use the `code-reviewer` skill (or manual review)
+- Input: implemented source code + UT cases
+- Verify: code follows SAD architecture, module boundaries, project conventions
+- Verify: all acceptance criteria are covered
+- If review fails: fix issues → rerun unit tests (go to Step 4)
+
+### Step 6: Git Commit
 - Use the `git-ops` skill
 - Commit message: `feat(M{n}): complete {milestone name}`
 
-### Step 6: Output Review Signal
+### Step 7: Output Review Signal
 - Print `[评审门]` with test results summary
 - Wait for user reply: `Review Passed: M{n}` or `Review Failed: ...`
 
-### Step 7 (on Failure)
+### Step 8 (on Failure)
 - If user replies `Review Failed: {reason}`:
   - Analyze the issue
   - Fix code → rerun unit tests (go to Step 4)
   - Max 3 retries per milestone
   - After 3 failures: log unresolved issues, proceed
 
-### Step 8: Proceed to System Test
+### Step 9: Proceed to System Test
 - After milestone review passes, proceed to Phase 4 (系统测试)
-- Run `/npd-test` for full system test suite
 
 ## Constraints
 - TDD is mandatory: write tests BEFORE implementation

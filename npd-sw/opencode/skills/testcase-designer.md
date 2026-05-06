@@ -1,4 +1,4 @@
-# testcase_designer
+# testcase-designer
 
 ## Role
 测试用例设计师
@@ -25,3 +25,10 @@
 - Each UT maps to exactly one acceptance criterion
 - Each ST maps to exactly one FR
 - Cover normal path, error path, and boundary conditions
+
+## Guidelines
+
+### Goal-Driven Execution
+- Transform requirements into verifiable test goals: "Write tests for invalid inputs, then make them pass"
+- Define clear pass/fail criteria for every test case.
+- Let tests define the contract — they are the verifiable success criteria.

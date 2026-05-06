@@ -1,4 +1,4 @@
-# review_tracker
+# review-tracker
 
 ## Purpose
 Track review gate submissions, approvals, rejections, and attempt counts.

@@ -1,4 +1,4 @@
-# git_ops
+# git-ops
 
 ## Purpose
 Standardized Git operations for NPD-SW Model workflow — commits, tags, and changelog.

@@ -1,4 +1,4 @@
-# rtm_builder
+# rtm-builder
 
 ## Role
 RTM 构建者

@@ -1,4 +1,4 @@
-# backlog_builder
+# backlog-builder
 
 ## Role
 Backlog 构建者

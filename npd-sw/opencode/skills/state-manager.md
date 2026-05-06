@@ -1,4 +1,4 @@
-# state_manager
+# state-manager
 
 ## Purpose
 Track and advance the NPD-SW Model workflow phase and milestone progress.

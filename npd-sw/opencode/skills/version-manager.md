@@ -1,4 +1,4 @@
-# version_manager
+# version-manager
 
 ## Purpose
 Semantic version management for NPD-SW documents. Parse, bump, and track version numbers.

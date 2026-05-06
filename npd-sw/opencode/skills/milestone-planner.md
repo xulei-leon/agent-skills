@@ -1,4 +1,4 @@
-# milestone_planner
+# milestone-planner
 
 ## Purpose
 Analyze SRS requirements and plan optimal milestone breakdown (M1-M4).
