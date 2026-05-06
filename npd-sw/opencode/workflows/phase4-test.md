@@ -21,7 +21,7 @@ Complete Phase 4: run full system test suite and generate test report.
   - Repeat until all ST pass
 
 ### Step 3: Generate System Test Report
-- Use the `report_gen` skill
+- Use the `report-gen` skill
 - Output: `test/results/system-test-report.md`
 - Include:
   - ST pass rate (passed/total)

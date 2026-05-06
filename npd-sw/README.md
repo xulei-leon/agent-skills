@@ -65,7 +65,7 @@ npd-sw/
 │       ├── market-analysis.md
 │       ├── requirements-analysis.md
 │       ├── software-architecture-design.md
-│       ├── test-gen.md
+│       ├── testcase-designer.md
 │       ├── git-ops.md
 │       ├── milestone-planner.md
 │       └── code-impl.md

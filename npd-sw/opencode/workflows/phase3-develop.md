@@ -10,14 +10,14 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 - Extract all acceptance criteria
 
 ### Step 2: Generate Unit Tests (TDD)
-- Use the `test_gen` skill
+- Use the `testcase-designer` skill
 - Input: milestone User Stories and acceptance criteria
 - Output: `test/ut/m{n}-us{yy}.test.*`
 - Cover ALL acceptance criteria for each US
 - Each UT must trace to a specific US acceptance criterion
 
 ### Step 3: Implement Code
-- Use the `code_impl` skill
+- Use the `code-impl` skill
 - Input: milestone specs + UT cases
 - Output: `src/` implementation files
 - Follow SAD architecture and module boundaries
@@ -28,7 +28,7 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 - If any UT fails: fix implementation → rerun until all pass
 
 ### Step 5: Git Commit
-- Use the `git_ops` skill
+- Use the `git-ops` skill
 - Commit message: `feat(M{n}): complete {milestone name}`
 
 ### Step 6: Output Review Signal

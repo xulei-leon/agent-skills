@@ -5,12 +5,12 @@ Complete Phase 0: research → approve → charter → approve.
 ## Steps
 
 ### Step 1: Market Research
-- Use the `market_analysis` skill
+- Use the `market-analysis` skill
 - Output: `docs/01-Concept/Market_Research.md`
 - Include: TAM/SAM/SOM, competitor analysis, SWOT, user personas, business model
 
 ### Step 2: User Research
-- Use the `market_analysis` skill
+- Use the `market-analysis` skill
 - Output: `docs/01-Concept/User_Research.md`
 - Include: research methods, user roles, journey map, pain points, priority matrix
 
@@ -21,7 +21,7 @@ Complete Phase 0: research → approve → charter → approve.
 - Wait for user reply: `Research Approved` to proceed, or modification requests
 
 ### Step 4: Create Charter
-- Use the `market_analysis` skill
+- Use the `market-analysis` skill
 - Input: user's project description + research findings from Step 1-2
 - Output: `docs/01-Concept/Charter.md`
 - Set `Version: 1.0.0` in header

@@ -18,9 +18,8 @@
   - Input: SRS + 技术栈约束
   - Content: 模块划分、接口定义、数据流、技术选型理由
   - 每个架构决策可追踪至 FR/NFR
-- **rtm**: `docs/03-Design/RTM.md` — 需求追踪矩阵
-  - Table: FR ID | 需求描述 | 涉及 US | 涉及 ST | 状态
 - **milestoneSpec**: `sprint/backlog.md` — 里程碑 Backlog 条目
+  - M0 只定义框架，不包含具体业务逻辑
   - 按功能耦合度和优先级将 FR 分组为 M1-M4
   - 每个 US 标注可追踪的 FR/NFR ID
   - 包含验收标准和复杂度评估 (S/M/L/XL)
@@ -28,4 +27,3 @@
 ## Constraints
 - SAD 版本与 SRS 主版本对齐（修改时同时递增）
 - M0 只定义框架，不包含具体业务逻辑
-- RTM 确保每个 FR 可追溯至 US 和 ST
