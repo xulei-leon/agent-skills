@@ -1,7 +1,7 @@
 # git_ops
 
 ## Purpose
-Standardized Git operations for CMM V-Model workflow — commits, tags, and changelog.
+Standardized Git operations for NPD-SW Model workflow — commits, tags, and changelog.
 
 ## Interface
 - **commit**(type, scope?, message): `string` — make standardized commit

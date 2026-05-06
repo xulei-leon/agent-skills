@@ -1,6 +1,6 @@
 # Version Management Workflow
 
-Parse, bump, and track semantic version numbers (x.y.z) across CMMV documents.
+Parse, bump, and track semantic version numbers (x.y.z) across NPD-SW documents.
 
 ## Data Types
 

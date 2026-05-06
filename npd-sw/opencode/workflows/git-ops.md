@@ -1,6 +1,6 @@
 # Git Operations Workflow
 
-Standardized commit messages and tagging for CMMV milestones.
+Standardized commit messages and tagging for NPD-SW milestones.
 
 ## Commit Templates
 

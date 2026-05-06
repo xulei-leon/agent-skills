@@ -132,4 +132,4 @@ interface IModuleName {
 
 | 版本 | 日期 | 作者 | 变更描述 |
 |------|------|------|---------|
-| 1.0.0 | {DATE} | CMMV Agent | 初始版本 |
+| 1.0.0 | {DATE} | NPD-SW Agent | 初始版本 |

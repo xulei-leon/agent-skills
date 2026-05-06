@@ -1,8 +1,8 @@
-# CMMV Command + Skills
+# NPD-SW Command + Skills
 
-**CMM V-Model & Agile Hybrid — Command + Skills 模式模板项目**
+**NPD-SW Model & Agile Hybrid — Command + Skills 模式模板项目**
 
-一套基于 Command + Skills 模式的流程驱动型开发框架，遵循 CMM V-Model 的 6 阶段生命周期（概念→需求→设计→开发→测试→发布），融合敏捷迭代和 TDD 实践。
+一套基于 Command + Skills 模式的流程驱动型开发框架，遵循 NPD-SW Model 的 6 阶段生命周期（概念→需求→设计→开发→测试→发布），融合敏捷迭代和 TDD 实践。
 
 ---
 
@@ -69,7 +69,7 @@ npd-sw/
 │
 ├── opencode/workflows/                 # 工作流定义
 ├── state.json                          # 工作流状态文件
-├── init-cmmv.sh                        # 脚手架脚本
+├── init-npd-sw.sh                        # 脚手架脚本
 │
 └── test/
     ├── st/
@@ -84,10 +84,10 @@ npd-sw/
 ```bash
 git clone <repo-url>
 cd npd-sw
-chmod +x init-cmmv.sh
+chmod +x init-npd-sw.sh
 
 # 初始化新项目
-./init-cmmv.sh init /path/to/my-project
+./init-npd-sw.sh init /path/to/my-project
 ```
 
 ---

@@ -4,7 +4,7 @@
 > **Version**: 1.0.0
 > **创建日期**: {DATE}
 > **最后更新**: {DATE}
-> **作者**: CMMV Agent (架构师)
+> **作者**: NPD-SW Agent (架构师)
 > **关联 SRS**: docs/02-Requirement/SRS.md
 
 ---
@@ -159,7 +159,7 @@ CREATE TABLE example (
 
 | 版本 | 日期 | 作者 | 变更描述 |
 |------|------|------|---------|
-| 1.0.0 | {DATE} | CMMV Agent | 初始版本 |
+| 1.0.0 | {DATE} | NPD-SW Agent | 初始版本 |
 
 ### 9.2 设计决策记录 (ADR)
 

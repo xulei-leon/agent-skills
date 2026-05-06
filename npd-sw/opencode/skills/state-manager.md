@@ -1,14 +1,14 @@
 # state_manager
 
 ## Purpose
-Read, write, and advance the CMM V-Model workflow state (`state.json`).
+Read, write, and advance the NPD-SW Model workflow state (`state.json`).
 
 ## Interface
-- **read**(path?): `CmmvState | null` — read state.json
+- **read**(path?): `NpdSwState | null` — read state.json
 - **write**(state, path?): `void` — persist state.json
-- **advance**(targetPhase, subphase): `CmmvState` — move to next phase
-- **markDoc**(docPath): `CmmvState` — record completed document
-- **markMilestone**(milestone): `CmmvState` — record completed milestone
+- **advance**(targetPhase, subphase): `NpdSwState` — move to next phase
+- **markDoc**(docPath): `NpdSwState` — record completed document
+- **markMilestone**(milestone): `NpdSwState` — record completed milestone
 
 ## State Schema
 ```json

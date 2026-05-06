@@ -1,6 +1,6 @@
 # Project Validation Workflow
 
-Verify CMMV project directory structure completeness.
+Verify NPD-SW project directory structure completeness.
 
 ## Steps
 

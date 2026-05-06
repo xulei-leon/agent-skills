@@ -1,7 +1,7 @@
 # version_manager
 
 ## Purpose
-Semantic version management for CMMV documents. Parse, bump, and track version numbers.
+Semantic version management for NPD-SW documents. Parse, bump, and track version numbers.
 
 ## Interface
 - **parse**(version): `SemVer | null` — parse "x.y.z" string

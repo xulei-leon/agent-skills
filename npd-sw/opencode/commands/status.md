@@ -1,7 +1,7 @@
 # /status
 
 ## Goal
-Display current CMM V-Model workflow status.
+Display current NPD-SW Model workflow status.
 
 ## Instructions
 
@@ -25,7 +25,7 @@ Display current CMM V-Model workflow status.
 ### Step 3: Print Report
 - Format:
   ```
-  ## CMM 工作流状态
+  ## NPD-SW 工作流状态
   - **当前阶段**: {phase} - {phase_name}
   - **当前里程碑**: {milestone}
   - **评审状态**: {review_status}

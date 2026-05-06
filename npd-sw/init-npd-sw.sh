@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================
-# CMMV Command + Skills - 项目初始化脚本
-# 将 CMMV Command + Skills 架构部署到目标项目
+# NPD-SW Command + Skills - 项目初始化脚本
+# 将 NPD-SW Command + Skills 架构部署到目标项目
 # ============================================================
 
 set -euo pipefail
@@ -20,7 +20,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 print_banner() {
   echo -e "${BLUE}"
   echo "╔══════════════════════════════════════════════════╗"
-  echo "║     CMM V-Model & Agile Hybrid                  ║"
+  echo "║     NPD-SW Model & Agile Hybrid                  ║"
   echo "║     Command + Skills 初始化工具 v2.0              ║"
   echo "╚══════════════════════════════════════════════════╝"
   echo -e "${NC}"
@@ -32,7 +32,7 @@ print_usage() {
   echo "  $0 status                检查当前项目状态"
   echo ""
   echo "示例:"
-  echo "  $0 init /path/to/my-proj   # 为 my-proj 初始化 CMMV 流程"
+  echo "  $0 init /path/to/my-proj   # 为 my-proj 初始化 NPD-SW 流程"
   echo "  $0 init .                  # 在当前目录初始化"
 }
 
@@ -47,7 +47,7 @@ cmd_init() {
     mkdir -p "$target"
   fi
 
-  echo -e "${BLUE}→ 初始化 CMMV 项目: $target${NC}"
+  echo -e "${BLUE}→ 初始化 NPD-SW 项目: $target${NC}"
 
   # 创建目录结构
   local dirs=(
@@ -159,7 +159,7 @@ cmd_global() {
 
 # ─── 状态检查 ──────────────────────────────────────
 cmd_status() {
-  echo -e "${BLUE}→ CMMV Agent 状态检查${NC}"
+  echo -e "${BLUE}→ NPD-SW Agent 状态检查${NC}"
   echo ""
 
   echo "项目根目录: $SCRIPT_DIR"

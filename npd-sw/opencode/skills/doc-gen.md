@@ -1,7 +1,7 @@
 # doc_gen
 
 ## Purpose
-Generate CMM V-Model lifecycle documents from templates and user input.
+Generate NPD-SW Model lifecycle documents from templates and user input.
 
 ## Capabilities
 - **charter**: create `docs/01-Concept/Charter.md` from project description
