@@ -1,28 +1,25 @@
-# /status
+# Status Check Workflow
 
-## Goal
-Display current NPD-SW Model workflow status.
+Display current project status by scanning files and state.
 
-## Instructions
+## Steps
 
-### Step 1: Read State
-- Use the `state_manager` skill to read `state.json`
-
-### Step 2: Scan Project Files
-- Check existence and completeness of:
-  - `state.json` — workflow state
+### Step 1: Scan Project Files
+- Check existence of:
+  - `sprint/sprint.md` — sprint plan
   - `docs/01-Concept/Charter.md` — project charter
   - `docs/01-Concept/Market_Research.md` — market research
+  - `docs/01-Concept/User_Research.md` — user research
   - `docs/02-Requirement/SRS.md` — SRS
-  - `docs/02-Requirement/user-stories.md` — US index
-  - `docs/02-Requirement/User-Story/M*.md` — milestone specs
+  - `sprint/backlog.md` — backlog items
+  - `sprint/sprint.md` — sprint plan
   - `docs/03-Design/SAD.md` — SAD
   - `docs/03-Design/RTM.md` — RTM
   - `test/st/*.test.*` — system test cases
   - `test/ut/*.test.*` — unit test cases
   - `src/` — source code
 
-### Step 3: Print Report
+### Step 2: Print Report
 - Format:
   ```
   ## NPD-SW 工作流状态
@@ -33,8 +30,9 @@ Display current NPD-SW Model workflow status.
   - **待办**: {next_action}
   ```
 
-### Step 4: Suggest Next Command
+### Step 3: Suggest Next Command
 - Based on current state, recommend the next command to run
+- Example: if Phase 0 just completed, suggest `/npd-requirement`
 
 ## Constraints
 - Read-only — do NOT modify any files

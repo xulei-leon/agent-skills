@@ -28,4 +28,4 @@ Track review gate submissions, approvals, rejections, and attempt counts.
 - All rejection reasons must be logged
 
 ## Implementation
-`opencode/workflows/review-gate.md` — review gate workflow
+`opencode/workflows/gate-decision.md` — gate decision workflow

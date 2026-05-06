@@ -2,6 +2,7 @@
 
 > **项目名称**: {PROJECT_NAME}
 > **Version**: 1.0.0
+> **Status**: Draft
 > **创建日期**: {DATE}
 > **关联 SRS**: docs/02-Requirement/SRS.md
 > **关联 SAD**: docs/03-Design/SAD.md

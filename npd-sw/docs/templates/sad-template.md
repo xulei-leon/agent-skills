@@ -2,6 +2,7 @@
 
 > **项目名称**: {PROJECT_NAME}
 > **Version**: 1.0.0
+> **Status**: Draft
 > **创建日期**: {DATE}
 > **最后更新**: {DATE}
 > **作者**: NPD-SW Agent (架构师)
@@ -69,7 +70,7 @@ project-root/
 │   ├── design/          # 设计文档
 │   ├── spec/            # 里程碑规格
 │   └── reports/         # 测试报告
-├── state.json           # 流程状态
+├── sprint/              # 迭代管理
 └── package.json
 ```
 

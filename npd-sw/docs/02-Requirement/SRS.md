@@ -2,6 +2,7 @@
 
 > **项目名称**: {PROJECT_NAME}
 > **版本**: 1.0.0
+> **状态**: Draft
 > **编制日期**: {DATE}
 > **最后更新**: {DATE}
 > **关联**: docs/02-Requirement/user-stories.md (User Story 索引)

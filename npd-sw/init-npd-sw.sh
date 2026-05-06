@@ -56,7 +56,8 @@ cmd_init() {
     "$target/opencode/workflows"
     "$target/docs/templates"
     "$target/docs/01-Concept"
-    "$target/docs/02-Requirement/User-Story"
+    "$target/docs/02-Requirement"
+    "$target/sprint/done"
     "$target/docs/03-Design"
     "$target/docs/04-Develop"
     "$target/docs/05-Test"
@@ -86,6 +87,22 @@ cmd_init() {
     fi
   done
 
+  # 复制 workflows
+  for wf_file in "$SCRIPT_DIR"/opencode/workflows/*.md; do
+    if [ -f "$wf_file" ]; then
+      cp "$wf_file" "$target/opencode/workflows/"
+      echo "  ✓ 复制: opencode/workflows/$(basename "$wf_file")"
+    fi
+  done
+
+  # 复制 sprint
+  for sprint_file in "$SCRIPT_DIR"/sprint/*.md; do
+    if [ -f "$sprint_file" ]; then
+      cp "$sprint_file" "$target/sprint/"
+      echo "  ✓ 复制: sprint/$(basename "$sprint_file")"
+    fi
+  done
+
   # 复制模板
   for tmpl_file in "$SCRIPT_DIR"/docs/templates/*.md; do
     if [ -f "$tmpl_file" ]; then
@@ -94,18 +111,15 @@ cmd_init() {
     fi
   done
 
-  # 复制 state.json 模板
-  if [ ! -f "$target/state.json" ]; then
-    cp "$SCRIPT_DIR/state.json" "$target/"
-    echo "  ✓ 复制: state.json (模板)"
-  fi
-
   # 复制 docs 生命周期模板
   if [ ! -f "$target/docs/01-Concept/Charter.md" ]; then
     cp "$SCRIPT_DIR/docs/01-Concept/Charter.md" "$target/docs/01-Concept/"
   fi
   if [ ! -f "$target/docs/01-Concept/Market_Research.md" ]; then
     cp "$SCRIPT_DIR/docs/01-Concept/Market_Research.md" "$target/docs/01-Concept/"
+  fi
+  if [ ! -f "$target/docs/01-Concept/User_Research.md" ]; then
+    cp "$SCRIPT_DIR/docs/01-Concept/User_Research.md" "$target/docs/01-Concept/"
   fi
   if [ ! -f "$target/docs/02-Requirement/SRS.md" ]; then
     cp "$SCRIPT_DIR/docs/02-Requirement/SRS.md" "$target/docs/02-Requirement/"
@@ -143,9 +157,9 @@ cmd_init() {
   echo "  使用方式:"
   echo "    cd $target"
   echo "    使用 Command + Skills 模式:"
-  echo "      /phase0-concept     # 启动概念阶段"
-  echo "      /phase1-requirement # 启动需求分析"
-  echo "      /status            # 查看项目状态"
+  echo "      /npd-concept        # 启动概念阶段"
+  echo "      /npd-requirement    # 启动需求分析"
+  echo "      /npd-status         # 查看项目状态"
   echo ""
   echo "  详细说明请参考 README.md"
   echo -e "${GREEN}════════════════════════════════════════════════════${NC}"
@@ -166,18 +180,33 @@ cmd_status() {
   echo ""
 
   local files=(
-    "opencode/commands/phase0-concept.md"
-    "opencode/commands/phase1-requirement.md"
-    "opencode/commands/phase2-design.md"
-    "opencode/commands/phase3-develop.md"
-    "opencode/commands/phase4-launch.md"
-    "opencode/commands/review-gate.md"
-    "opencode/commands/status.md"
+    "opencode/commands/npd-concept.md"
+    "opencode/commands/npd-requirement.md"
+    "opencode/commands/npd-design.md"
+    "opencode/commands/npd-develop.md"
+    "opencode/commands/npd-launch.md"
+    "opencode/commands/npd-test.md"
+    "opencode/commands/npd-decision.md"
+    "opencode/commands/npd-status.md"
+    "opencode/workflows/phase0-concept.md"
+    "opencode/workflows/phase1-requirement.md"
+    "opencode/workflows/phase2-design.md"
+    "opencode/workflows/phase3-develop.md"
+    "opencode/workflows/phase4-test.md"
+    "opencode/workflows/phase5-launch.md"
+    "opencode/workflows/gate-decision.md"
+    "opencode/workflows/status-check.md"
+    "opencode/workflows/git-ops.md"
+    "opencode/workflows/project-validation.md"
+    "opencode/workflows/report-generation.md"
+    "opencode/workflows/version-management.md"
     "opencode/skills/state-manager.md"
     "opencode/skills/version-manager.md"
     "opencode/skills/report-gen.md"
     "opencode/skills/review-tracker.md"
-    "opencode/skills/doc-gen.md"
+    "opencode/skills/market-analysis.md"
+    "opencode/skills/requirements-analysis.md"
+    "opencode/skills/software-architecture-design.md"
     "opencode/skills/test-gen.md"
     "opencode/skills/git-ops.md"
     "opencode/skills/milestone-planner.md"
@@ -188,14 +217,16 @@ cmd_status() {
     "docs/templates/spec-template.md"
     "docs/01-Concept/Charter.md"
     "docs/01-Concept/Market_Research.md"
+    "docs/01-Concept/User_Research.md"
     "docs/02-Requirement/SRS.md"
     "docs/02-Requirement/user-stories.md"
-    "docs/02-Requirement/User-Story/M0-architecture.md"
+    "sprint/backlog.md"
+    "sprint/sprint.md"
     "docs/03-Design/SAD.md"
     "docs/03-Design/RTM.md"
     "docs/05-Test/test-strategy.md"
     "docs/05-Test/test-design.md"
-    "state.json"
+    "docs/02-Requirement/spec.md"
     "opencode/workflows"
   )
 

@@ -2,6 +2,7 @@
 
 > **项目名称**: {PROJECT_NAME}
 > **Version**: 1.0.0
+> **Status**: Draft
 > **创建日期**: {DATE}
 > **最后更新**: {DATE}
 > **作者**: NPD-SW Agent (系统分析师)

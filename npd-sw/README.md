@@ -13,7 +13,7 @@
 - **6 阶段全流程覆盖** — 概念论证 → 需求分析 → 架构设计 → 迭代开发 → 系统测试 → 部署发布
 - **评审门控机制** — 每阶段/里程碑强制评审，通过后才能进入下一步
 - **TDD 强制** — 先写测试用例，再写实现代码
-- **状态持久化** — `state.json` 追踪工作流进度，断点续做
+- **Sprint 驱动** — sprint/backlog.md + sprint/sprint.md 管理迭代
 
 ---
 
@@ -21,11 +21,11 @@
 
 | Phase | 阶段 | 文档产出 | 出口条件 |
 |-------|------|---------|---------|
-| 0 | **概念 (Concept)** | Charter, Market Research | `Phase 0 Approved` |
-| 1 | **需求 (Requirement)** | SRS, user-stories, ST Cases | `Phase 1 Approved` |
-| 2 | **设计 (Design)** | SAD, RTM, User-Story/M0-M4 | `Phase 2 Approved` |
-| 3 | **开发 (Develop)** | src/, UT, milestone 循环 | `Review Passed: M{n}` |
-| 4 | **测试 (Test)** | 测试报告 (System-Test/results/) | 所有 milestone 通过 |
+| 0 | **概念 (Research → Charter)** | Market Research, User Research → Charter | `Charter Approved` |
+| 1 | **需求 (Requirement)** | SRS, SAD, ST Cases | `Phase 1 Approved` |
+| 2 | **设计 (Design)** | sprint/backlog.md, sprint/sprint.md, RTM | `Phase 2 Approved` |
+| 3 | **开发 (Develop)** | src/, UT | `Review Passed: M{n}` |
+| 4 | **测试 (Test)** | System Test Report | 所有 ST 通过 |
 | 5 | **发布 (Launch)** | build-report, CHANGELOG, Git Tag | 构建成功 |
 
 ---
@@ -34,21 +34,37 @@
 
 ```
 npd-sw/
-├── opencode/                           # ★ Command + Skill 定义
+├── opencode/                           # ★ Command + Workflow + Skill 定义
 │   ├── commands/                       #   命令定义
+│   │   ├── npd-concept.md
+│   │   ├── npd-requirement.md
+│   │   ├── npd-design.md
+│   │   ├── npd-develop.md
+│   │   ├── npd-test.md
+│   │   ├── npd-launch.md
+│   │   ├── npd-decision.md
+│   │   └── npd-status.md
+│   ├── workflows/                      #   工作流定义
 │   │   ├── phase0-concept.md
 │   │   ├── phase1-requirement.md
 │   │   ├── phase2-design.md
 │   │   ├── phase3-develop.md
-│   │   ├── phase4-launch.md
-│   │   ├── review-gate.md
-│   │   └── status.md
+│   │   ├── phase4-test.md
+│   │   ├── phase5-launch.md
+│   │   ├── gate-decision.md
+│   │   ├── status-check.md
+│   │   ├── git-ops.md
+│   │   ├── project-validation.md
+│   │   ├── report-generation.md
+│   │   └── version-management.md
 │   └── skills/                         #   Skill 定义
 │       ├── state-manager.md
 │       ├── version-manager.md
 │       ├── report-gen.md
 │       ├── review-tracker.md
-│       ├── doc-gen.md
+│       ├── market-analysis.md
+│       ├── requirements-analysis.md
+│       ├── software-architecture-design.md
 │       ├── test-gen.md
 │       ├── git-ops.md
 │       ├── milestone-planner.md
@@ -66,9 +82,6 @@ npd-sw/
 │   ├── 04-Develop/
 │   ├── 05-Test/
 │   └── 06-Launch/
-│
-├── opencode/workflows/                 # 工作流定义
-├── state.json                          # 工作流状态文件
 ├── init-npd-sw.sh                        # 脚手架脚本
 │
 └── test/
@@ -98,13 +111,14 @@ chmod +x init-npd-sw.sh
 
 | 命令 | 用途 |
 |------|------|
-| `/phase0-concept` | 启动概念阶段 |
-| `/phase1-requirement` | 启动需求分析阶段 |
-| `/phase2-design` | 启动设计阶段 |
-| `/phase3-develop` | 启动迭代开发 |
-| `/phase4-launch` | 启动部署发布 |
-| `/review-gate` | 处理评审结果 |
-| `/status` | 查看项目状态 |
+| `/npd-concept` | 启动概念阶段 |
+| `/npd-requirement` | 启动需求分析阶段 |
+| `/npd-design` | 启动设计阶段 |
+| `/npd-develop` | 启动迭代开发 |
+| `/npd-test` | 启动系统测试阶段 |
+| `/npd-launch` | 启动部署发布 |
+| `/npd-decision` | 处理评审结果 |
+| `/npd-status` | 查看项目状态 |
 
 ### 命令格式
 
@@ -113,18 +127,15 @@ chmod +x init-npd-sw.sh
 - **Instructions** — 步骤化指引，引用 Skills
 - **Constraints** — 约束条件
 
-### 示例流程
+### 完整流程
 
 ```
-用户: /phase0-concept 开发一个图书管理系统
-  → 执行 Step 1: doc_gen skill 创建 Charter
-  → 执行 Step 2: doc_gen skill 创建 Market Research
-  → 执行 Step 3: state_manager skill 更新状态
-  → 输出评审信号，等待用户确认
-
-用户: Phase 0 Approved
-  → /review-gate 处理推进信号
-  → 建议下一步: /phase1-requirement
+Phase 0: /npd-concept           → 输出评审 -> Phase 0 Approved
+Phase 1: /npd-requirement       → 输出评审 -> Phase 1 Approved
+Phase 2: /npd-design            → 输出评审 -> Phase 2 Approved
+Phase 3: /npd-develop (per M{n}) → 输出评审 -> Review Passed: M{n}
+Phase 4: /npd-test              → 所有 ST 通过
+Phase 5: /npd-launch            → 构建成功
 ```
 
 ---
