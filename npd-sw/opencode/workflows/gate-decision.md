@@ -5,7 +5,7 @@ Track milestone/phase gate decisions: Go, No Go, Hold, Rework.
 ## Data Types
 
 ```typescript
-interface ReviewGate {
+interface GateDecision {
   milestone: string;
   status: 'Go' | 'No Go' | 'Hold' | 'Rework';
   submittedAt: string;
@@ -18,8 +18,8 @@ interface ReviewGate {
 
 ## Storage
 
-- File: `.review-gates.json`
-- Format: `ReviewGate[]`
+- File: `.gate-decision.json`
+- Format: `GateDecision[]`
 
 ## Steps
 
@@ -35,8 +35,8 @@ interface ReviewGate {
 - Look up existing gate
   - If exists: increment `attempt`, reset `status`, clear comments
   - If new: create gate with `attempt: 1`
-- Persist to `.review-gates.json`
-- Output: `ReviewGate`
+- Persist to `.gate-decision.json`
+- Output: `GateDecision`
 
 ### Step 2: Record Decision
 - Input: milestone, decision (`Go` | `No Go` | `Hold` | `Rework`), comments[], reviewer?
@@ -55,7 +55,7 @@ interface ReviewGate {
 
 ### Step 5: Handle No Go
 - On `No Go`: phase or milestone is rejected
-- Log the reason in `.review-gates.json`
+- Log the reason in `.gate-decision.json`
 - Project may need restructuring
 
 ### Step 6: Handle Hold

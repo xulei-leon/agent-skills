@@ -43,7 +43,7 @@ npd-sw/
 │   │   ├── npd-test.md
 │   │   ├── npd-launch.md
 │   │   ├── npd-decision.md
-│   │   └── npd-status.md
+│   │   └── .npd-status.md
 │   ├── workflows/                      #   工作流定义
 │   │   ├── phase0-concept.md
 │   │   ├── phase1-requirement.md
@@ -55,11 +55,10 @@ npd-sw/
 │   │   ├── status-check.md
 │   │   ├── git-ops.md
 │   │   ├── project-validation.md
-│   │   ├── report-generation.md
-│   │   └── version-management.md
+│   │   ├── report-gen.md → moved to test-reporter skill
+│   │   └── version-management.md → removed, unused
 │   └── skills/                         #   Skill 定义
 │       ├── state-manager.md
-│       ├── version-manager.md
 │       ├── test-reporter.md
 │       ├── review-tracker.md
 │       ├── market-analysis.md

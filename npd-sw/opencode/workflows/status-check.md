@@ -1,4 +1,4 @@
-# Status Check Workflow
+# NPD-SW Status Check Workflow
 
 Display current project status by scanning files and state.
 
@@ -6,13 +6,13 @@ Display current project status by scanning files and state.
 
 ### Step 1: Scan Project Files
 - Check existence of:
+  - `.npd-status.md` — project status overview
   - `sprint/sprint.md` — sprint plan
   - `docs/01-Concept/Charter.md` — project charter
   - `docs/01-Concept/Market_Research.md` — market research
   - `docs/01-Concept/User_Research.md` — user research
   - `docs/02-Requirement/SRS.md` — SRS
   - `sprint/backlog.md` — backlog items
-  - `sprint/sprint.md` — sprint plan
   - `docs/03-Design/SAD.md` — SAD
   - `docs/03-Design/RTM.md` — RTM
   - `test/st/*.test.*` — system test cases
