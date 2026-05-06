@@ -211,10 +211,7 @@ cmd_status() {
     "opencode/skills/git-ops.md"
     "opencode/skills/milestone-planner.md"
     "opencode/skills/code-impl.md"
-    "docs/templates/srs-template.md"
-    "docs/templates/sad-template.md"
-    "docs/templates/st-template.md"
-    "docs/templates/spec-template.md"
+    "test/st/st-case.md"
     "docs/01-Concept/Charter.md"
     "docs/01-Concept/Market_Research.md"
     "docs/01-Concept/User_Research.md"
@@ -226,7 +223,6 @@ cmd_status() {
     "docs/03-Design/RTM.md"
     "docs/05-Test/test-strategy.md"
     "docs/05-Test/test-design.md"
-    "docs/02-Requirement/spec.md"
     "opencode/workflows"
   )
 

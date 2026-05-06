@@ -22,8 +22,8 @@
 | Phase | 阶段 | 文档产出 | 出口条件 |
 |-------|------|---------|---------|
 | 0 | **概念 (Research → Charter)** | Market Research, User Research → Charter | `Charter Approved` |
-| 1 | **需求 (Requirement)** | SRS, SAD, ST Cases | `Phase 1 Approved` |
-| 2 | **设计 (Design)** | sprint/backlog.md, sprint/sprint.md, RTM | `Phase 2 Approved` |
+| 1 | **需求 (Requirement)** | SRS, ST Cases | `Phase 1 Approved` |
+| 2 | **设计 (Design)** | SAD, sprint/backlog.md, sprint/sprint.md, RTM | `Phase 2 Approved` |
 | 3 | **开发 (Develop)** | src/, UT | `Review Passed: M{n}` |
 | 4 | **测试 (Test)** | System Test Report | 所有 ST 通过 |
 | 5 | **发布 (Launch)** | build-report, CHANGELOG, Git Tag | 构建成功 |
@@ -72,10 +72,7 @@ npd-sw/
 │
 ├── docs/
 │   ├── templates/                      # 文档模板
-│   │   ├── srs-template.md
-│   │   ├── sad-template.md
-│   │   ├── st-template.md
-│   │   └── spec-template.md
+│   │   ├── ...
 │   ├── 01-Concept/
 │   ├── 02-Requirement/
 │   ├── 03-Design/

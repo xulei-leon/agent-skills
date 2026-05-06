@@ -26,7 +26,7 @@
 | 市场调研报告 | docs/01-Concept/Market_Research.md | V1.0.0 | Draft |
 | 用户研究报告 | docs/01-Concept/User_Research.md | V1.0.0 | Draft |
 | 软件需求规格 | docs/02-Requirement/SRS.md | 1.0.0 | Draft |
-| 软件规格书 | docs/02-Requirement/spec.md | 1.0.0 | Draft |
+
 | 系统架构设计 | docs/03-Design/SAD.md | 1.0.0 | Draft |
 | 需求追踪矩阵 | docs/03-Design/RTM.md | 1.0.0 | Draft |
 | 测试策略 | docs/05-Test/test-strategy.md | 1.0.0 | Draft |

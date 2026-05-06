@@ -15,16 +15,14 @@
 ## Documents
 - **srs**: `docs/02-Requirement/SRS.md` — 软件需求规格说明书
   - Input: Charter + 用户需求描述
-  - Template: `docs/templates/srs-template.md`
   - FR 编号: FR-001, FR-002, ...
   - NFR 编号: NFR-001, NFR-002, ...
 - **stCases**: `test/st/st-cases.test.*` — 系统测试用例
-  - Template: `docs/templates/st-template.md`
-  - Format: Given-When-Then
+  - Format: `test/st/st-case.md` 模板
+  - Given-When-Then
   - 每个 ST 必须有 Traceability ID 指向 FR
   - 覆盖正常路径、异常路径、边界条件
 
 ## Constraints
 - 每个 FR 必须可测试、可追踪
-- SRS 版本与后续 SAD 对齐
 - Version 首次 1.0.0，修改后递增

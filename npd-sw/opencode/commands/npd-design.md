@@ -1,7 +1,7 @@
 # /npd-design
 
 ## Goal
-Complete Phase 2 (Design) — plan milestones, build backlog, and create RTM.
+Complete Phase 2 (Design) — create SAD, plan milestones, build backlog, and create RTM.
 
 ## Workflow
 `opencode/workflows/phase2-design.md`
