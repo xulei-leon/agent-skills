@@ -6,7 +6,7 @@ Verify NPD-SW project directory structure completeness.
 
 ### Step 1: Check Required Directories
 - Verify each required directory exists:
-  - `docs/requirment`
+  - `docs/requirement`
   - `docs/design`
   - `docs/spec`
   - `docs/reports`

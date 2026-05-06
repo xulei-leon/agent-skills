@@ -21,7 +21,7 @@ Complete Phase 1: produce SRS and System Test cases.
 - Cover normal path, error path, and boundary conditions
 
 ### Step 3: Output Review Signal
-- Print `[Phase 1 出口检查]` with checklist
+- Print `[Phase 1 Exit Check]` with checklist
 - Wait for user reply: `Phase 1 Approved` to advance
 
 ## Exit Criteria

@@ -75,8 +75,8 @@ interface ReviewGate {
 ```markdown
 1. Submit: `submitForGate("M1")`
 2. Go: `resolveGate("M1", "Go", ["LGTM"], "reviewer")`
-3. No Go: `resolveGate("M1", "No Go", ["架构不合理"])`
-4. Hold: `resolveGate("M1", "Hold", ["依赖未就绪"])`
-5. Rework: `resolveGate("M1", "Rework", ["缺少异常处理"])`
+3. No Go: `resolveGate("M1", "No Go", ["Unreasonable architecture"])`
+4. Hold: `resolveGate("M1", "Hold", ["Dependencies not ready"])`
+5. Rework: `resolveGate("M1", "Rework", ["Missing exception handling"])`
 6. Check: `canProceed("M1")` → `true` / `false`
 ```

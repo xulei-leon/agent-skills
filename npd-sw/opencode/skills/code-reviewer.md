@@ -1,7 +1,7 @@
 # code-reviewer
 
 ## Role
-代码评审员
+Code Reviewer
 
 ## Interface
 - **review**(sourceCode, utCases): `ReviewResult`

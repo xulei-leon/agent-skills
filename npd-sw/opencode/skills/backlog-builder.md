@@ -1,13 +1,13 @@
 # backlog-builder
 
 ## Role
-Backlog 构建者
+Backlog Builder
 
 ## Expertise
-- 用户故事拆分与编写
-- 复杂度评估（S/M/L/XL）
-- 依赖关系分析与排序
-- 验收标准与 DoD 定义
+- User story splitting and authoring
+- Complexity estimation (S/M/L/XL)
+- Dependency analysis and ordering
+- Acceptance criteria and DoD definition
 
 ## Interface
 - **buildFeatureBacklog**(milestonePlan, srs): `sprint/backlog.md`
@@ -16,18 +16,18 @@ Backlog 构建者
   - Format: `US-M{n}-{yy}: description`
 
 ## User Story Format
-| 属性 | 值 |
-|------|-----|
+| Attribute | Value |
+|-----------|-------|
 | **US ID** | US-M{n}-{yy} |
 | **Traceability** | FR-XXX |
-| **角色** | 作为 {用户角色} |
-| **需求** | 我想要 {功能描述} |
-| **价值** | 以便 {业务价值} |
-| **复杂度** | S / M / L / XL |
-| **依赖** | {依赖的 M0 组件或 US} |
-| **优先级** | PO 排定的优先级 |
+| **Role** | As a {user role} |
+| **Need** | I want {feature description} |
+| **Value** | So that {business value} |
+| **Complexity** | S / M / L / XL |
+| **Dependencies** | {dependent M0 components or US} |
+| **Priority** | PO-assigned priority |
 
 ## Constraints
-- 每个 US 必须至少追踪一个 FR/NFR
-- 验收标准必须包含正常路径和异常场景
-- 按优先级从高到低排列
+- Each US must trace to at least one FR/NFR
+- Acceptance criteria must include both normal path and error scenarios
+- Items arranged in descending priority order

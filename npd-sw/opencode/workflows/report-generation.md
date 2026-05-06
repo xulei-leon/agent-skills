@@ -35,13 +35,13 @@ interface TraceItem {
 - Output format:
 
 ```markdown
-# M{n} 测试报告
+# M{n} Test Report
 
-- **日期**: YYYY-MM-DD
-- **UT 总数**: 12, 通过: 12, 失败: 0 (通过率: 100.0%)
-- **ST 总数**: 5, 通过: 5, 失败: 0 (通过率: 100.0%)
-- **覆盖率**: 85.0%
-- **已知问题**: 无
+- **Date**: YYYY-MM-DD
+- **UT Total**: 12, Passed: 12, Failed: 0 (Pass Rate: 100.0%)
+- **ST Total**: 5, Passed: 5, Failed: 0 (Pass Rate: 100.0%)
+- **Coverage**: 85.0%
+- **Known Issues**: None
 ```
 
 ### Step 2: Generate Traceability Matrix
@@ -49,9 +49,9 @@ interface TraceItem {
 - Output: Markdown table
 
 ```markdown
-| FR ID | 需求描述 | 涉及 US | 涉及 ST | 状态 |
-|-------|---------|---------|---------|------|
-| FR-001 | 用户登录 | US-M1-01 | ST-001 | completed |
+| FR ID | Requirement Description | Related US | Related ST | Status |
+|-------|------------------------|------------|------------|--------|
+| FR-001 | User Login | US-M1-01 | ST-001 | completed |
 ```
 
 ## Usage

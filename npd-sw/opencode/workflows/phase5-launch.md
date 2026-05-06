@@ -7,7 +7,7 @@ Complete Phase 5: build verification, changelog, and Git tag.
 ### Step 1: Build Verification
 - Run `npm run build` (or language-appropriate build command)
 - If build fails: fix → rebuild until success
-- Use the `report-gen` skill to create `docs/06-Launch/build-report.md`
+- Use the `test-reporter` skill to create `docs/06-Launch/build-report.md`
 - Include: build status, artifact list, build time
 
 ### Step 2: Update Changelog
@@ -16,16 +16,22 @@ Complete Phase 5: build verification, changelog, and Git tag.
 - Follow semantic versioning from SRS
 - Include: new features, bug fixes, breaking changes
 
-### Step 3: Git Tag
+### Step 3: Generate Release Note
+- Output: `docs/06-Launch/release-note.md`
+- Content: version number, release date, summary of changes, new features, bug fixes, breaking changes
+- Format follows semantic versioning from SRS
+
+### Step 4: Git Tag
 - Use the `git-ops` skill to create tag:
 - `git tag -a v{x.y.z} -m "Release v{x.y.z}"`
 - Version matches SRS main version
 
-### Step 4: Output Final Report
-- Print `[Phase 5 出口检查]` with full checklist:
+### Step 5: Output Final Report
+- Print `[Phase 5 Exit Check]` with full checklist:
   - All milestone UT/ST passed
   - Build succeeded
   - CHANGELOG.md updated
+  - Release note generated
   - Git tag created
 - Confirm project is ready for production deployment
 
@@ -33,4 +39,5 @@ Complete Phase 5: build verification, changelog, and Git tag.
 - All milestones have `Review Passed`
 - Build succeeds
 - CHANGELOG.md updated
+- Release note generated (`docs/06-Launch/release-note.md`)
 - Git tag created

@@ -58,5 +58,5 @@ interface VersionBumpResult {
 2. Bump: `bumpVersion("1.2.3", "minor")` → `"1.3.0"`
 3. Extract: `extractVersionFromContent(content)` → `"1.0.0"`
 4. Bump file: `bumpDocumentVersion("path/to/doc.md", "patch")`
-5. Infer: `inferBumpType("新增用户登录功能")` → `"minor"`
+5. Infer: `inferBumpType("Added user login feature")` → `"minor"`
 ```

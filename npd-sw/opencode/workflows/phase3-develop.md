@@ -39,7 +39,7 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 - Commit message: `feat(M{n}): complete {milestone name}`
 
 ### Step 7: Output Review Signal
-- Print `[评审门]` with test results summary
+- Print `[Review Gate]` with test results summary
 - Wait for user reply: `Review Passed: M{n}` or `Review Failed: ...`
 
 ### Step 8 (on Failure)
@@ -50,7 +50,7 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
   - After 3 failures: log unresolved issues, proceed
 
 ### Step 9: Proceed to System Test
-- After milestone review passes, proceed to Phase 4 (系统测试)
+- After milestone review passes, proceed to Phase 4 (System Test)
 
 ## Constraints
 - TDD is mandatory: write tests BEFORE implementation

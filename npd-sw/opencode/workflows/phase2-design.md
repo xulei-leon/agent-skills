@@ -9,7 +9,7 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 - Input: `docs/02-Requirement/SRS.md`
 - Output: `docs/03-Design/SAD.md`
 - Trace each architecture decision to FR/NFR
-- Include: tech stack rationale, module划分, interface definitions, data flow
+- Include: tech stack rationale, module partitioning, interface definitions, data flow
 
 ### Step 2: Build Initial RTM (Requirements → Architecture)
 - Use the `rtm-builder` skill
@@ -27,9 +27,9 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 
 ### Step 4: Create M0 Architecture Backlog
 - Use the `software-architecture-design` skill
-- Output: `sprint/backlog.md` — populate `M0 — 架构搭建` section
-- Table columns: ID | 类型 | 标题 | SRS 追踪 | US ID | 优先级 | 复杂度 | 状态
-- M0 items use type `TECH` (技术任务), IDs `BL-001` onward, US IDs `US-M0-{yy}`
+- Output: `sprint/backlog.md` — populate `M0 — Architecture Scaffolding` section
+- Table columns: ID | Type | Title | SRS Trace | US ID | Priority | Complexity | Status
+- M0 items use type `TECH` (technical task), IDs `BL-001` onward, US IDs `US-M0-{yy}`
 - Define: directory structure, module dependencies, public interfaces, data models
 - M0 is architecture scaffolding only — no business logic
 
@@ -37,7 +37,7 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 - Use the `backlog-builder` skill
 - Input: milestone plan + SRS
 - Output: `sprint/backlog.md` — populate `M1` ~ `M4` sections
-- Table columns: ID | 类型 | 标题 | SRS 追踪 | US ID | 优先级 | 复杂度 | 状态
+- Table columns: ID | Type | Title | SRS Trace | US ID | Priority | Complexity | Status
 - Format: `US-M{n}-{yy}` US IDs, type `US`, traceable FR/NFR IDs
 - Include acceptance criteria, complexity estimate (S/M/L/XL), and dependencies
 
@@ -48,7 +48,7 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 - Every FR must trace to at least one architecture module, one US, and one ST
 
 ### Step 7: Output Review Signal
-- Print `[Phase 2 出口检查]` with checklist
+- Print `[Phase 2 Exit Check]` with checklist
 - Wait for user reply: `Phase 2 Approved` to advance
 
 ## Exit Criteria

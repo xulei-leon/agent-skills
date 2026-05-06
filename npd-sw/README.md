@@ -60,7 +60,7 @@ npd-sw/
 │   └── skills/                         #   Skill 定义
 │       ├── state-manager.md
 │       ├── version-manager.md
-│       ├── report-gen.md
+│       ├── test-reporter.md
 │       ├── review-tracker.md
 │       ├── market-analysis.md
 │       ├── requirements-analysis.md

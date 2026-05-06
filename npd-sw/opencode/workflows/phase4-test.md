@@ -21,8 +21,8 @@ Complete Phase 4: run full system test suite and generate test report.
   - Repeat until all ST pass
 
 ### Step 3: Generate System Test Report
-- Use the `report-gen` skill
-- Output: `test/results/system-test-report.md`
+- Use the `test-reporter` skill
+- Output: `test/results/system-test-report-V<version>.md`
 - Include:
   - ST pass rate (passed/total)
   - Coverage metrics
@@ -30,7 +30,7 @@ Complete Phase 4: run full system test suite and generate test report.
   - Per-milestone summary
 
 ### Step 4: Output Completion Signal
-- Print `[Phase 4 完成]` with test summary
+- Print `[Phase 4 Complete]` with test summary
 - All milestones pass confirmation
 - Proceed to Phase 5 (Launch) when ready
 

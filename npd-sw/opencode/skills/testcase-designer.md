@@ -1,13 +1,13 @@
 # testcase-designer
 
 ## Role
-测试用例设计师
+Test Case Designer
 
 ## Expertise
-- 单元测试与系统测试用例设计
-- 验收标准到测试用例的映射
-- Given-When-Then 格式编写
-- 正常路径、异常路径、边界条件覆盖
+- Unit test and system test case design
+- Mapping acceptance criteria to test cases
+- Given-When-Then format authoring
+- Normal path, error path, and boundary condition coverage
 
 ## Interface
 - **unitTests**(milestoneSpec, acceptanceCriteria): `file[]`

@@ -15,7 +15,7 @@ Complete Phase 0: research → approve → charter → approve.
 - Include: research methods, user roles, journey map, pain points, priority matrix
 
 ### Step 3: Output Research Review Signal
-- Print `[Research 评审]` with checklist:
+- Print `[Research Review]` with checklist:
   - Market Research
   - User Research
 - Wait for user reply: `Research Approved` to proceed, or modification requests
@@ -28,7 +28,7 @@ Complete Phase 0: research → approve → charter → approve.
 - Include: project background, scope, milestones, roles, tech stack, budget, risks
 
 ### Step 5: Output Charter Review Signal
-- Print `[Charter 评审]` with checklist:
+- Print `[Charter Review]` with checklist:
   - Charter
 - Wait for user reply: `Charter Approved` to complete Phase 0
 

@@ -22,12 +22,12 @@ Display current project status by scanning files and state.
 ### Step 2: Print Report
 - Format:
   ```
-  ## NPD-SW 工作流状态
-  - **当前阶段**: {phase} - {phase_name}
-  - **当前里程碑**: {milestone}
-  - **评审状态**: {review_status}
-  - **已完成文档**: {list}
-  - **待办**: {next_action}
+  ## NPD-SW Workflow Status
+  - **Current Phase**: {phase} - {phase_name}
+  - **Current Milestone**: {milestone}
+  - **Review Status**: {review_status}
+  - **Completed Documents**: {list}
+  - **Next Action**: {next_action}
   ```
 
 ### Step 3: Suggest Next Command

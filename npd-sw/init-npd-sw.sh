@@ -202,7 +202,7 @@ cmd_status() {
     "opencode/workflows/version-management.md"
     "opencode/skills/state-manager.md"
     "opencode/skills/version-manager.md"
-    "opencode/skills/report-gen.md"
+    "opencode/skills/test-reporter.md"
     "opencode/skills/review-tracker.md"
     "opencode/skills/market-analysis.md"
     "opencode/skills/requirements-analysis.md"
