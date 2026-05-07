@@ -94,21 +94,43 @@ cmd_init() {
     fi
   done
 
-  # Copy sprint
+  # Copy sprint (strip -template suffix)
   for sprint_file in "$SCRIPT_DIR"/sprint/*.md; do
     if [ -f "$sprint_file" ]; then
-      cp "$sprint_file" "$target/sprint/"
-      echo "  ✓ Copied: sprint/$(basename "$sprint_file")"
+      basename="${sprint_file##*/}"
+      target_name="${basename%-template.md}.md"
+      cp "$sprint_file" "$target/sprint/$target_name"
+      echo "  ✓ Copied: sprint/$target_name"
     fi
   done
 
-  # Copy doc lifecycle templates (skip if any doc already exists to avoid overwrite)
+  # Copy doc lifecycle templates (strip -template suffix, skip if any doc already exists)
   if [ ! -f "$target/docs/01-Concept/Charter.md" ]; then
-    cp -r "$SCRIPT_DIR/docs/"* "$target/docs/"
+    for doc_file in "$SCRIPT_DIR"/docs/*/*.md; do
+      if [ -f "$doc_file" ]; then
+        dir="${doc_file%/*}"
+        subdir="${dir#$SCRIPT_DIR/docs/}"
+        basename="${doc_file##*/}"
+        target_name="${basename%-template.md}.md"
+        mkdir -p "$target/docs/$subdir"
+        cp "$doc_file" "$target/docs/$subdir/$target_name"
+      fi
+    done
     echo "  ✓ Copied: doc lifecycle templates"
   else
     echo "  ○ docs already exist, skipping copy"
   fi
+
+  # Copy test/st template (strip -template suffix)
+  mkdir -p "$target/test/st"
+  for st_file in "$SCRIPT_DIR"/test/st/*.md; do
+    if [ -f "$st_file" ]; then
+      basename="${st_file##*/}"
+      target_name="${basename%-template.md}.md"
+      cp "$st_file" "$target/test/st/$target_name"
+      echo "  ✓ Copied: test/st/$target_name"
+    fi
+  done
   echo "  ✓ Created: test/results/"
 
   echo ""
@@ -170,19 +192,19 @@ cmd_status() {
     "opencode/skills/code-reviewer.md"
     "opencode/skills/rtm-builder.md"
     "opencode/skills/backlog-builder.md"
-    "test/st/st-case.md"
-    "docs/01-Concept/Charter.md"
-    "docs/01-Concept/Market_Research.md"
-    "docs/01-Concept/User_Research.md"
-    "docs/02-Requirement/SRS.md"
+    "test/st/st-case-template.md"
+    "docs/01-Concept/Charter-template.md"
+    "docs/01-Concept/Market_Research-template.md"
+    "docs/01-Concept/User_Research-template.md"
+    "docs/02-Requirement/SRS-template.md"
     ".npd-status.md"
-    "sprint/backlog.md"
-    "sprint/sprint.md"
-    "docs/03-Design/SAD.md"
-    "docs/03-Design/milestones.md"
-    "docs/03-Design/RTM.md"
-    "docs/05-Test/test-strategy.md"
-    "docs/05-Test/test-design.md"
+    "sprint/backlog-template.md"
+    "sprint/sprint-template.md"
+    "docs/03-Design/SAD-template.md"
+    "docs/03-Design/milestones-template.md"
+    "docs/03-Design/RTM-template.md"
+    "docs/05-Test/test-strategy-template.md"
+    "docs/05-Test/test-design-template.md"
     "opencode/workflows"
   )
 

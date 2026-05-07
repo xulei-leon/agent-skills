@@ -71,8 +71,6 @@ npd-sw/
 │       └── code-reviewer.md
 │
 ├── docs/
-│   ├── templates/                      # 文档模板
-│   │   ├── ...
 │   ├── 01-Concept/
 │   ├── 02-Requirement/
 │   ├── 03-Design/

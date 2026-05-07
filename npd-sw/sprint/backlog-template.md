@@ -3,7 +3,7 @@
 > **项目**: {PROJECT_NAME}
 > **版本**: 1.0.0
 > **编制日期**: {DATE}
-> **关联 SRS**: docs/02-Requirement/SRS.md
+> **关联 SRS**: docs/02-Requirement/SRS-template.md
 > **总条目**: {TOTAL}
 > **总 SP**: {TOTAL_SP}
 
