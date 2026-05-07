@@ -94,34 +94,22 @@ cmd_init() {
     fi
   done
 
-  # Copy sprint (strip -template suffix)
+  # Copy sprint
   for sprint_file in "$SCRIPT_DIR"/sprint/*.md; do
     if [ -f "$sprint_file" ]; then
-      basename="${sprint_file##*/}"
-      target_name="${basename%-template.md}.md"
-      cp "$sprint_file" "$target/sprint/$target_name"
-      echo "  ✓ Copied: sprint/$target_name"
+      cp "$sprint_file" "$target/sprint/"
+      echo "  ✓ Copied: sprint/$(basename "$sprint_file")"
     fi
   done
 
-  # Copy doc lifecycle templates (strip -template suffix, skip if any doc already exists)
-  if [ ! -f "$target/docs/01-Concept/Charter.md" ]; then
-    for doc_file in "$SCRIPT_DIR"/docs/*/*.md; do
-      if [ -f "$doc_file" ]; then
-        dir="${doc_file%/*}"
-        subdir="${dir#$SCRIPT_DIR/docs/}"
-        basename="${doc_file##*/}"
-        target_name="${basename%-template.md}.md"
-        mkdir -p "$target/docs/$subdir"
-        cp "$doc_file" "$target/docs/$subdir/$target_name"
-      fi
-    done
+  # Copy doc lifecycle templates (skip if already exists)
+  if [ ! -f "$target/docs/01-Concept/Charter-template.md" ]; then
+    cp -r "$SCRIPT_DIR/docs/"* "$target/docs/"
     echo "  ✓ Copied: doc lifecycle templates"
   else
     echo "  ○ docs already exist, skipping copy"
   fi
-
-  # Copy test/st template (strip -template suffix)
+  echo "  ✓ Created: test/results/"
   mkdir -p "$target/test/st"
   for st_file in "$SCRIPT_DIR"/test/st/*.md; do
     if [ -f "$st_file" ]; then
