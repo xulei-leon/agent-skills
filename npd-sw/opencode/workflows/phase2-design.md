@@ -47,7 +47,9 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 - Output: `docs/03-Design/RTM.md` (full)
 - Every FR must trace to at least one architecture module, one US, and one ST
 
-### Step 7: Output Review Signal
+### Step 7: Bump Versions and Output Review Signal
+- Use the `version-manager` skill to bump document versions
+- Bump `docs/03-Design/SAD.md`, `docs/03-Design/RTM.md`, `docs/03-Design/milestones.md` if modified
 - Print `[Phase 2 Exit Check]` with checklist
 - Wait for user reply: `Phase 2 Approved` to advance
 

@@ -16,11 +16,13 @@ Complete Phase 1: produce SRS and System Test cases.
 - Use the `testcase-designer` skill
 - Input: SRS functional requirements
 - Output: `test/st/st-cases.test.*`
-- Follow template: `test/st/st-case.md`
+- Follow template: `test/st/st-case-template.md`
 - Each ST must have Traceability ID pointing to a FR
 - Cover normal path, error path, and boundary conditions
 
-### Step 3: Output Review Signal
+### Step 3: Bump Versions and Output Review Signal
+- Use the `version-manager` skill to bump document versions
+- Bump `docs/02-Requirement/SRS.md` if modified
 - Print `[Phase 1 Exit Check]` with checklist
 - Wait for user reply: `Phase 1 Approved` to advance
 

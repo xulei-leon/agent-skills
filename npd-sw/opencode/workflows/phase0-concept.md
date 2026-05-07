@@ -27,7 +27,9 @@ Complete Phase 0: research → approve → charter → approve.
 - Set `Version: 1.0.0` in header
 - Include: project background, scope, milestones, roles, tech stack, budget, risks
 
-### Step 5: Output Charter Review Signal
+### Step 5: Bump Versions and Output Charter Review Signal
+- Use the `version-manager` skill to bump document versions
+- Bump `docs/01-Concept/Charter.md`, `docs/01-Concept/Market_Research.md`, `docs/01-Concept/User_Research.md` if modified
 - Print `[Charter Review]` with checklist:
   - Charter
 - Wait for user reply: `Charter Approved` to complete Phase 0

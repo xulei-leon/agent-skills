@@ -26,7 +26,8 @@ Complete Phase 5: build verification, changelog, and Git tag.
 - `git tag -a v{x.y.z} -m "Release v{x.y.z}"`
 - Version matches SRS main version
 
-### Step 5: Output Final Report
+### Step 5: Bump Versions and Output Final Report
+- Use the `version-manager` skill to bump document versions
 - Print `[Phase 5 Exit Check]` with full checklist:
   - All milestone UT/ST passed
   - Build succeeded
