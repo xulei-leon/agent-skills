@@ -1,7 +1,7 @@
 # git-ops
 
-## Purpose
-Standardized Git operations for NPD-SW Model workflow — commits, tags, and changelog.
+## Role
+Git Operator
 
 ## Interface
 - **commit**(type, scope?, message): `string` — make standardized commit
@@ -17,5 +17,5 @@ Standardized Git operations for NPD-SW Model workflow — commits, tags, and cha
 
 ## Constraints
 - Commit after each atomic operation
-- Tag only at Phase 4 (release)
+- Tag only at Phase 5 (release)
 - Never amend pushed commits

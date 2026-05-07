@@ -1,7 +1,11 @@
 # milestone-planner
 
-## Purpose
-Analyze SRS requirements and plan optimal milestone breakdown (M1-M4).
+## Role
+Milestone Planner
+
+## Expertise
+- SRS requirements analysis and milestone breakdown
+- Functional coupling and dependency analysis
 
 ## Interface
 - **plan**(srsContent): `MilestonePlan[]` — analyze FRs and group into milestones

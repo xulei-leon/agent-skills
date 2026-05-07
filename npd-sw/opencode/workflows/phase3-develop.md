@@ -32,7 +32,7 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 - Input: implemented source code + UT cases
 - Verify: code follows SAD architecture, module boundaries, project conventions
 - Verify: all acceptance criteria are covered
-- If review fails: fix issues → rerun unit tests (go to Step 4)
+- If review fails: fix issues → rerun unit tests (go to Step 3)
 
 ### Step 6: Git Commit
 - Use the `git-ops` skill
@@ -45,7 +45,7 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 ### Step 8 (on Failure)
 - If user replies `Review Failed: {reason}`:
   - Analyze the issue
-  - Fix code → rerun unit tests (go to Step 4)
+  - Fix code → rerun unit tests (go to Step 3)
   - Max 3 retries per milestone
   - After 3 failures: log unresolved issues, proceed
 

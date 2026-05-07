@@ -54,22 +54,23 @@ npd-sw/
 │   │   ├── gate-decision.md
 │   │   ├── status-check.md
 │   │   ├── git-ops.md
-│   │   ├── project-validation.md
-│   │   ├── report-gen.md → moved to test-reporter skill
-│   │   └── version-management.md → removed, unused
 │   └── skills/                         #   Skill 定义
-│       ├── state-manager.md
-│       ├── test-reporter.md
-│       ├── review-tracker.md
 │       ├── market-analysis.md
 │       ├── requirements-analysis.md
 │       ├── software-architecture-design.md
-│       ├── testcase-designer.md
-│       ├── git-ops.md
 │       ├── milestone-planner.md
+│       ├── rtm-builder.md
+│       ├── backlog-builder.md
+│       ├── testcase-designer.md
 │       ├── programmer.md
-│       └── code-reviewer.md
+│       ├── code-reviewer.md
+│       ├── test-reporter.md
+│       ├── git-ops.md
+│       ├── state-manager.md
+│       └── review-tracker.md
 │
+├── .npd-status.json                    #   项目状态 (含 gate decisions)
+├── npd-sw-install.sh                   #   脚手架脚本
 ├── docs/
 │   ├── 01-Concept/
 │   ├── 02-Requirement/
@@ -92,10 +93,10 @@ npd-sw/
 ```bash
 git clone <repo-url>
 cd npd-sw
-chmod +x init-npd-sw.sh
+chmod +x npd-sw-install.sh
 
 # 初始化新项目
-./init-npd-sw.sh init /path/to/my-project
+./npd-sw-install.sh init /path/to/my-project
 ```
 
 ---

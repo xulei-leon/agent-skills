@@ -1,7 +1,7 @@
 # review-tracker
 
-## Purpose
-Track review gate submissions, approvals, rejections, and attempt counts.
+## Role
+Review Tracker
 
 ## Interface
 - **submit**(milestone): `ReviewGate` — submit milestone for review

@@ -159,7 +159,6 @@ cmd_status() {
     "opencode/workflows/gate-decision.md"
     "opencode/workflows/status-check.md"
     "opencode/workflows/git-ops.md"
-    "opencode/workflows/project-validation.md"
     "opencode/skills/state-manager.md"
     "opencode/skills/test-reporter.md"
     "opencode/skills/review-tracker.md"

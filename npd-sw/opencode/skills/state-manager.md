@@ -1,7 +1,7 @@
 # state-manager
 
-## Purpose
-Track and advance the NPD-SW Model workflow phase and milestone progress.
+## Role
+State Manager
 
 ## Interface
 - **advance**(targetPhase, subphase): move to next phase
