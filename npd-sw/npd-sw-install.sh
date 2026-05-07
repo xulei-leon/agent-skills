@@ -102,21 +102,14 @@ cmd_init() {
     fi
   done
 
-  # Copy doc lifecycle templates (skip if already exists)
-  if [ ! -f "$target/docs/01-Concept/Charter-template.md" ]; then
-    cp -r "$SCRIPT_DIR/docs/"* "$target/docs/"
-    echo "  ✓ Copied: doc lifecycle templates"
-  else
-    echo "  ○ docs already exist, skipping copy"
-  fi
-  echo "  ✓ Created: test/results/"
+  # Copy doc lifecycle templates (force override)
+  cp -r "$SCRIPT_DIR/docs/"* "$target/docs/"
+  echo "  ✓ Copied: doc lifecycle templates"
   mkdir -p "$target/test/st"
   for st_file in "$SCRIPT_DIR"/test/st/*.md; do
     if [ -f "$st_file" ]; then
-      basename="${st_file##*/}"
-      target_name="${basename%-template.md}.md"
-      cp "$st_file" "$target/test/st/$target_name"
-      echo "  ✓ Copied: test/st/$target_name"
+      cp "$st_file" "$target/test/st/"
+      echo "  ✓ Copied: test/st/$(basename "$st_file")"
     fi
   done
   echo "  ✓ Created: test/results/"
