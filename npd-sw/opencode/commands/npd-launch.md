@@ -7,6 +7,6 @@ Complete Phase 5 (Launch) — build verification, changelog, and Git tag.
 `opencode/workflows/phase5-launch.md`
 
 ## Constraints
-- All milestones must have `Review Passed` before launching
+- All milestones must have gate `Go` before launching
 - Build must succeed before tagging
 - Do NOT skip any checklist item

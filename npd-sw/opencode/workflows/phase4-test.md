@@ -3,7 +3,7 @@
 Complete Phase 4: run full system test suite and generate test report.
 
 ## Prerequisites
-- All milestones have `Review Passed`
+- All milestones have gate `Go`
 - Each milestone UT passed in Phase 3
 
 ## Steps

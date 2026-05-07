@@ -31,14 +31,11 @@ A **project starter template** using OpenCode's Command + Skills pattern. Not an
 - **Gate-driven**: each phase requires approval signal (`Phase N Approved`, `Review Passed: M{n}`) to proceed.
 - **Milestones**: M0 = architecture scaffolding only (no business logic). M1-M4 group FRs by coupling/priority.
 - **Sprint tracking**: `sprint/backlog.md` + `sprint/sprint.md` manage iterations.
-- **State**: `.npd-status.md` tracks phase/document/sprint status; `.gate-decision.json` tracks gate decisions.
+- **State**: `.npd-status.json` tracks phase/document/sprint status and gate decisions.
 - **Install**: `npd-sw-install.sh init <target-dir>` copies the template to a new project.
 
 ### Stale README entries
 
 The README at `npd-sw/README.md` references:
-- `init-npd-sw.sh` — renamed to `npd-sw-install.sh`
-- `docs/templates/` — directory was deleted (content merged into working docs)
-- `report-generation.md` and `version-management.md` — both removed as unused
 
 When editing the README, remove or update these references.

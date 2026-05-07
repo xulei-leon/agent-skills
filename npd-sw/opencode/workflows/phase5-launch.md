@@ -37,7 +37,7 @@ Complete Phase 5: build verification, changelog, and Git tag.
 - Confirm project is ready for production deployment
 
 ## Exit Criteria
-- All milestones have `Review Passed`
+- All milestones have gate `Go`
 - Build succeeds
 - CHANGELOG.md updated
 - Release note generated (`docs/06-Launch/release-note.md`)

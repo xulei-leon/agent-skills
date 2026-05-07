@@ -8,5 +8,5 @@ Process a review gate decision for a milestone or phase.
 
 ## Constraints
 - Never auto-approve — always wait for explicit user signal
-- Log every Review Failed reason
-- Max 3 failed attempts per milestone
+- Log every No Go / Rework reason
+- Max 3 Rework attempts per milestone

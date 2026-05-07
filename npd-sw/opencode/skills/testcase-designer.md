@@ -17,7 +17,7 @@ Test Case Designer
 - **systemTests**(srs, frList): `file[]`
   - Input: SRS functional requirements
   - Output: `test/st/st-cases.test.*`
-  - Follow template: `test/st/st-case.md`
+  - Follow template: `test/st/st-case-template.md`
   - Given-When-Then with Traceability ID to FR
 
 ## Constraints

@@ -38,20 +38,23 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 - Use the `git-ops` skill
 - Commit message: `feat(M{n}): complete {milestone name}`
 
-### Step 7: Output Review Signal
+### Step 7: Output Review Signal (Gate Decision)
 - Print `[Review Gate]` with test results summary
-- Wait for user reply: `Review Passed: M{n}` or `Review Failed: ...`
+- Use the `gate-decision` workflow to process user signal:
+  - `Go` → milestone passed, proceed to Step 9
+  - `Rework` → needs fixes (go to Step 8)
+- Wait for user reply: `Go` or `Rework: {reason}`
 
-### Step 8 (on Failure)
-- If user replies `Review Failed: {reason}`:
+### Step 8 (on Rework)
+- If user replies `Rework: {reason}`:
   - Analyze the issue
   - Fix code → rerun unit tests (go to Step 3)
   - Max 3 retries per milestone
-  - After 3 failures: log unresolved issues, proceed
+  - After 3 failures: log unresolved issues, escalate to `No Go`
 
 ### Step 9: Proceed to System Test
-- After milestone review passes, proceed to Phase 4 (System Test)
+- After milestone review passes (gate status `Go`), proceed to Phase 4 (System Test)
 
 ## Constraints
 - TDD is mandatory: write tests BEFORE implementation
-- Do NOT enter M{n+1} until `Review Passed: M{n}`
+- Do NOT enter M{n+1} until gate status is `Go` for M{n}

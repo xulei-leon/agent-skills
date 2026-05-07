@@ -4,16 +4,16 @@
 Review Tracker
 
 ## Interface
-- **submit**(milestone): `ReviewGate` — submit milestone for review
-- **resolve**(milestone, resolution, comments?, reviewer?): `ReviewGate` — pass/fail
-- **canProceed**(milestone): `boolean` — check if review passed
-- **read**(): `ReviewGate[]` — read all gate states
+- **submit**(milestone): `GateDecision` — submit milestone for gate decision
+- **resolve**(milestone, decision, comments?, reviewer?): `GateDecision` — record Go/No Go/Hold/Rework
+- **canProceed**(milestone): `boolean` — check if decision is Go
+- **read**(): `GateDecision[]` — read all gate states
 
 ## Gate Schema
 ```json
 {
   "milestone": "M1",
-  "status": "pending|submitted|passed|failed",
+  "status": "Go|No Go|Hold|Rework",
   "submittedAt": "ISO8601",
   "resolvedAt": "ISO8601",
   "reviewer": "string",
@@ -23,9 +23,9 @@ Review Tracker
 ```
 
 ## Constraints
-- Max 3 failed attempts per milestone
-- Can only proceed after `passed` status
-- All rejection reasons must be logged
+- Max 3 `Rework` attempts per milestone
+- Can only proceed after `Go` status
+- All rejection reasons must be logged in `.npd-status.json`
 
 ## Implementation
 `opencode/workflows/gate-decision.md` — gate decision workflow

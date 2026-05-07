@@ -172,6 +172,7 @@ cmd_status() {
     "opencode/skills/code-reviewer.md"
     "opencode/skills/rtm-builder.md"
     "opencode/skills/backlog-builder.md"
+    "opencode/skills/version-manager.md"
     "test/st/st-case-template.md"
     "docs/01-Concept/Charter-template.md"
     "docs/01-Concept/Market_Research-template.md"

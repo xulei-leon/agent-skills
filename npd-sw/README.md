@@ -42,8 +42,7 @@ npd-sw/
 │   │   ├── npd-develop.md
 │   │   ├── npd-test.md
 │   │   ├── npd-launch.md
-│   │   ├── npd-decision.md
-│   │   └── .npd-status.json
+│   │   └── npd-decision.md
 │   ├── workflows/                      #   工作流定义
 │   │   ├── phase0-concept.md
 │   │   ├── phase1-requirement.md
@@ -67,6 +66,7 @@ npd-sw/
 │       ├── test-reporter.md
 │       ├── git-ops.md
 │       ├── state-manager.md
+│       ├── version-manager.md
 │       └── review-tracker.md
 │
 ├── .npd-status.json                    #   项目状态 (含 gate decisions)
@@ -78,7 +78,6 @@ npd-sw/
 │   ├── 04-Develop/
 │   ├── 05-Test/
 │   └── 06-Launch/
-├── init-npd-sw.sh                        # 脚手架脚本
 │
 └── test/
     ├── st/
