@@ -43,7 +43,7 @@ npd-sw/
 │   │   ├── npd-test.md
 │   │   ├── npd-launch.md
 │   │   ├── npd-decision.md
-│   │   └── .npd-status.md
+│   │   └── .npd-status.json
 │   ├── workflows/                      #   工作流定义
 │   │   ├── phase0-concept.md
 │   │   ├── phase1-requirement.md

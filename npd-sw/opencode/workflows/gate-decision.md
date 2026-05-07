@@ -18,7 +18,7 @@ interface GateDecision {
 
 ## Storage
 
-- File: `.gate-decision.json`
+- File: `.npd-status.json` (under `gates` array)
 - Format: `GateDecision[]`
 
 ## Steps
@@ -35,7 +35,7 @@ interface GateDecision {
 - Look up existing gate
   - If exists: increment `attempt`, reset `status`, clear comments
   - If new: create gate with `attempt: 1`
-- Persist to `.gate-decision.json`
+- Persist to `.npd-status.json`
 - Output: `GateDecision`
 
 ### Step 2: Record Decision
@@ -55,7 +55,7 @@ interface GateDecision {
 
 ### Step 5: Handle No Go
 - On `No Go`: phase or milestone is rejected
-- Log the reason in `.gate-decision.json`
+- Log the reason in `.npd-status.json`
 - Project may need restructuring
 
 ### Step 6: Handle Hold

@@ -178,7 +178,7 @@ cmd_status() {
     "docs/01-Concept/Market_Research-template.md"
     "docs/01-Concept/User_Research-template.md"
     "docs/02-Requirement/SRS-template.md"
-    ".npd-status.md"
+    ".npd-status.json"
     "sprint/backlog-template.md"
     "sprint/sprint-template.md"
     "docs/03-Design/SAD-template.md"

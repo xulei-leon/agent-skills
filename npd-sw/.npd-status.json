@@ -1,0 +1,30 @@
+{
+  "project": "{PROJECT_NAME}",
+  "updatedAt": "{DATE}",
+  "phases": [
+    { "id": 0, "name": "Concept", "command": "/npd-concept", "status": "Pending" },
+    { "id": 1, "name": "Requirement", "command": "/npd-requirement", "status": "Pending" },
+    { "id": 2, "name": "Design", "command": "/npd-design", "status": "Pending" },
+    { "id": 3, "name": "Develop", "command": "/npd-develop", "status": "Pending" },
+    { "id": 4, "name": "Test", "command": "/npd-test", "status": "Pending" },
+    { "id": 5, "name": "Launch", "command": "/npd-launch", "status": "Pending" }
+  ],
+  "documents": [
+    { "name": "Project Charter", "path": "docs/01-Concept/Charter-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "Market Research", "path": "docs/01-Concept/Market_Research-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "User Research", "path": "docs/01-Concept/User_Research-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "SRS", "path": "docs/02-Requirement/SRS-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "SAD", "path": "docs/03-Design/SAD-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "RTM", "path": "docs/03-Design/RTM-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "Milestones", "path": "docs/03-Design/milestones-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "Test Strategy", "path": "docs/05-Test/test-strategy-template.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "Test Design", "path": "docs/05-Test/test-design-template.md", "version": "1.0.0", "status": "Draft" }
+  ],
+  "sprints": [
+    { "id": "Sprint 1", "goal": "Architecture Scaffolding", "backlog": "BL-001 ~ BL-003, BL-016 ~ BL-018", "status": "Planning" },
+    { "id": "Sprint 2", "goal": "Core Feature 1", "backlog": "BL-004 ~ BL-005, BL-019", "status": "Planning" },
+    { "id": "Sprint 3", "goal": "Core Feature 2", "backlog": "BL-006 ~ BL-009, BL-020", "status": "Planning" },
+    { "id": "Sprint 4", "goal": "Quality & Operations", "backlog": "BL-010 ~ BL-015, BL-021", "status": "Planning" }
+  ],
+  "gates": []
+}

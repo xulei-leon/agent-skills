@@ -6,7 +6,7 @@ Display current project status by scanning files and state.
 
 ### Step 1: Scan Project Files
 - Check existence of:
-  - `.npd-status.md` — project status overview
+  - `.npd-status.json` — project status overview
   - `sprint/sprint.md` — sprint plan
   - `docs/01-Concept/Charter.md` — project charter
   - `docs/01-Concept/Market_Research.md` — market research
