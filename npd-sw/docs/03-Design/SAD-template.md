@@ -5,7 +5,7 @@
 > **状态**: Draft
 > **编制日期**: {DATE}
 > **最后更新**: {DATE}
-> **关联 SRS**: docs/02-Requirement/SRS-template.md
+> **关联 SRS**: docs/02-Requirement/SRS.md
 
 ---
 

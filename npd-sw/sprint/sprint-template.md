@@ -2,7 +2,7 @@
 
 > **项目**: {PROJECT_NAME}
 > **编制日期**: {DATE}
-> **关联 Backlog**: sprint/backlog-template.md
+> **关联 Backlog**: sprint/backlog.md
 
 ---
 

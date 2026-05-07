@@ -4,7 +4,7 @@
 > **版本**: 1.0.0
 > **状态**: Draft
 > **编制日期**: {DATE}
-> **关联**: docs/05-Test/test-strategy-template.md, docs/02-Requirement/SRS-template.md
+> **关联**: docs/05-Test/test-strategy.md, docs/02-Requirement/SRS.md
 
 ---
 
