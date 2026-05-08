@@ -34,4 +34,4 @@ Review Tracker
 - All rejection reasons must be logged in `.npd-status.json`
 
 ## Implementation
-`opencode/workflows/gate-decision.md` — gate decision workflow
+`.opencode/workflows/gate-decision.md` — gate decision workflow

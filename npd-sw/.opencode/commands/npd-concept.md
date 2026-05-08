@@ -4,7 +4,7 @@
 Complete Phase 0 (Concept) — research first, then charter.
 
 ## Workflow
-`opencode/workflows/phase0-concept.md`
+`.opencode/workflows/phase0-concept.md`
 
 ## Constraints
 - Research must be approved (`Research Approved`) before creating Charter

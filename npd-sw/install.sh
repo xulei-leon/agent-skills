@@ -71,7 +71,7 @@ cmd_init() {
   done
 
   # Copy commands
-  for cmd_file in "$SCRIPT_DIR"/opencode/commands/*.md; do
+  for cmd_file in "$SCRIPT_DIR"/.opencode/commands/*.md; do
     if [ -f "$cmd_file" ]; then
       cp "$cmd_file" "$target/.opencode/commands/"
       echo "  ✓ Copied: .opencode/commands/$(basename "$cmd_file")"
@@ -79,7 +79,7 @@ cmd_init() {
   done
 
   # Copy skills (each in its own subdirectory with SKILL.md)
-  for skill_dir in "$SCRIPT_DIR"/opencode/skills/*/; do
+  for skill_dir in "$SCRIPT_DIR"/.opencode/skills/*/; do
     if [ -d "$skill_dir" ]; then
       cp -r "$skill_dir" "$target/.opencode/skills/"
       echo "  ✓ Copied: .opencode/skills/$(basename "$skill_dir")/SKILL.md"
@@ -87,7 +87,7 @@ cmd_init() {
   done
 
   # Copy workflows
-  for wf_file in "$SCRIPT_DIR"/opencode/workflows/*.md; do
+  for wf_file in "$SCRIPT_DIR"/.opencode/workflows/*.md; do
     if [ -f "$wf_file" ]; then
       cp "$wf_file" "$target/.opencode/workflows/"
       echo "  ✓ Copied: .opencode/workflows/$(basename "$wf_file")"
@@ -142,37 +142,37 @@ cmd_status() {
   echo ""
 
   local files=(
-    "opencode/commands/npd-concept.md"
-    "opencode/commands/npd-requirement.md"
-    "opencode/commands/npd-design.md"
-    "opencode/commands/npd-develop.md"
-    "opencode/commands/npd-launch.md"
-    "opencode/commands/npd-test.md"
-    "opencode/commands/npd-decision.md"
-    "opencode/commands/npd-status.md"
-    "opencode/workflows/phase0-concept.md"
-    "opencode/workflows/phase1-requirement.md"
-    "opencode/workflows/phase2-design.md"
-    "opencode/workflows/phase3-develop.md"
-    "opencode/workflows/phase4-test.md"
-    "opencode/workflows/phase5-launch.md"
-    "opencode/workflows/gate-decision.md"
-    "opencode/workflows/status-check.md"
-    "opencode/workflows/git-ops.md"
-    "opencode/skills/state-manager/SKILL.md"
-    "opencode/skills/test-reporter/SKILL.md"
-    "opencode/skills/review-tracker/SKILL.md"
-    "opencode/skills/market-analysis/SKILL.md"
-    "opencode/skills/requirements-analysis/SKILL.md"
-    "opencode/skills/software-architecture-design/SKILL.md"
-    "opencode/skills/testcase-designer/SKILL.md"
-    "opencode/skills/git-ops/SKILL.md"
-    "opencode/skills/milestone-planner/SKILL.md"
-    "opencode/skills/programmer/SKILL.md"
-    "opencode/skills/code-reviewer/SKILL.md"
-    "opencode/skills/rtm-builder/SKILL.md"
-    "opencode/skills/backlog-builder/SKILL.md"
-    "opencode/skills/version-manager/SKILL.md"
+    ".opencode/commands/npd-concept.md"
+    ".opencode/commands/npd-requirement.md"
+    ".opencode/commands/npd-design.md"
+    ".opencode/commands/npd-develop.md"
+    ".opencode/commands/npd-launch.md"
+    ".opencode/commands/npd-test.md"
+    ".opencode/commands/npd-decision.md"
+    ".opencode/commands/npd-status.md"
+    ".opencode/workflows/phase0-concept.md"
+    ".opencode/workflows/phase1-requirement.md"
+    ".opencode/workflows/phase2-design.md"
+    ".opencode/workflows/phase3-develop.md"
+    ".opencode/workflows/phase4-test.md"
+    ".opencode/workflows/phase5-launch.md"
+    ".opencode/workflows/gate-decision.md"
+    ".opencode/workflows/status-check.md"
+    ".opencode/workflows/git-ops.md"
+    ".opencode/skills/state-manager/SKILL.md"
+    ".opencode/skills/test-reporter/SKILL.md"
+    ".opencode/skills/review-tracker/SKILL.md"
+    ".opencode/skills/market-analysis/SKILL.md"
+    ".opencode/skills/requirements-analysis/SKILL.md"
+    ".opencode/skills/software-architecture-design/SKILL.md"
+    ".opencode/skills/testcase-designer/SKILL.md"
+    ".opencode/skills/git-ops/SKILL.md"
+    ".opencode/skills/milestone-planner/SKILL.md"
+    ".opencode/skills/programmer/SKILL.md"
+    ".opencode/skills/code-reviewer/SKILL.md"
+    ".opencode/skills/rtm-builder/SKILL.md"
+    ".opencode/skills/backlog-builder/SKILL.md"
+    ".opencode/skills/version-manager/SKILL.md"
     "test/st/st-case-template.md"
     "docs/01-Concept/Charter-template.md"
     "docs/01-Concept/Market_Research-template.md"
@@ -186,7 +186,7 @@ cmd_status() {
     "docs/03-Design/RTM-template.md"
     "docs/05-Test/test-strategy-template.md"
     "docs/05-Test/test-design-template.md"
-    "opencode/workflows"
+    ".opencode/workflows"
   )
 
   for f in "${files[@]}"; do

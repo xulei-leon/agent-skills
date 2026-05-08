@@ -4,7 +4,7 @@
 Complete Phase 1 (Requirement) — produce SRS and System Test cases.
 
 ## Workflow
-`opencode/workflows/phase1-requirement.md`
+`.opencode/workflows/phase1-requirement.md`
 
 ## Constraints
 - Do NOT proceed without `Phase 1 Approved`
