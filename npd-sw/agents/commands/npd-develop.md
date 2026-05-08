@@ -1,0 +1,12 @@
+# /npd-develop
+
+## Goal
+Execute TDD development loop for a milestone: UT case → Code → Test → Review.
+
+## Workflow
+`agents/workflows/phase3-develop.md`
+
+## Constraints
+- TDD is mandatory: write tests BEFORE implementation
+- Do NOT enter M{n+1} until gate status is `Go` for M{n}
+- Each UT case must trace to a specific US acceptance criterion
