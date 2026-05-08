@@ -114,9 +114,9 @@ cmd_init() {
   done
   echo "  ✓ Created: test/results/"
 
-  # Copy .npd-status template (renamed to actual name in target)
-  cp "$SCRIPT_DIR/.npd-status-template.json" "$target/.npd-status.json"
-  echo "  ✓ Copied: .npd-status.json"
+  # Copy .npd-status template
+  cp "$SCRIPT_DIR/.npd-status-template.json" "$target/.npd-status-template.json"
+  echo "  ✓ Copied: .npd-status-template.json"
 
   echo ""
   echo -e "${GREEN}════════════════════════════════════════════════════${NC}"
@@ -182,7 +182,7 @@ cmd_status() {
     "docs/01-Concept/Market_Research-template.md"
     "docs/01-Concept/User_Research-template.md"
     "docs/02-Requirement/SRS-template.md"
-    ".npd-status-template.json"
+    ".npd-status.json"
     "sprint/backlog-template.md"
     "sprint/sprint-template.md"
     "docs/03-Design/SAD-template.md"
