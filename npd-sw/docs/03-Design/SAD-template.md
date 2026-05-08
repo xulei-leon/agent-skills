@@ -75,6 +75,7 @@ project-root/
 │   ├── 01-Concept/      # 概念文档
 │   ├── 02-Requirement/  # 需求文档
 │   ├── 03-Design/       # 设计文档
+│   ├── 04-Develop/      # 开发文档
 │   ├── 05-Test/         # 测试文档
 │   └── 06-Launch/       # 发布文档
 ├── sprint/              # 迭代管理

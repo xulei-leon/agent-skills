@@ -21,12 +21,12 @@
 
 | Phase | 阶段 | 文档产出 | 出口条件 |
 |-------|------|---------|---------|
-| 0 | **概念 (Research → Charter)** | Market Research, User Research → Charter | `Charter Approved` |
-| 1 | **需求 (Requirement)** | SRS, ST Cases | `Phase 1 Approved` |
-| 2 | **设计 (Design)** | SAD, sprint/backlog.md, sprint/sprint.md, RTM | `Phase 2 Approved` |
-| 3 | **开发 (Develop)** | src/, UT | `Review Passed: M{n}` |
-| 4 | **测试 (Test)** | System Test Report | 所有 ST 通过 |
-| 5 | **发布 (Launch)** | build-report, CHANGELOG, Git Tag | 构建成功 |
+| 0 | **概念 (Research → Charter)** | Market Research, User Research → Charter | `/npd-decision phase0 go` |
+| 1 | **需求 (Requirement)** | SRS, ST Cases | `/npd-decision phase1 go` |
+| 2 | **设计 (Design)** | SAD, sprint/backlog.md, sprint/sprint.md, RTM | `/npd-decision phase2 go` |
+| 3 | **开发 (Develop)** | src/, UT | `/npd-decision M{n} go` |
+| 4 | **测试 (Test)** | System Test Report | `/npd-decision phase4 go` |
+| 5 | **发布 (Launch)** | build-report, CHANGELOG, Git Tag | `/npd-decision phase5 go` |
 
 > 各阶段可通过 `.npd-status.json` 中的 `enable` 字段控制是否启用。设为 `false` 则跳过该阶段，工作流会自动寻找下一个启用的阶段。
 
@@ -56,23 +56,23 @@ npd-sw/
 │   │   ├── status-check.md
 │   │   ├── git-ops.md
 │   └── skills/                         #   Skill 定义
-│       ├── market-analysis.md
-│       ├── requirements-analysis.md
-│       ├── software-architecture-design.md
-│       ├── milestone-planner.md
-│       ├── rtm-builder.md
-│       ├── backlog-builder.md
-│       ├── testcase-designer.md
-│       ├── programmer.md
-│       ├── code-reviewer.md
-│       ├── test-reporter.md
-│       ├── git-ops.md
-│       ├── state-manager.md
-│       ├── version-manager.md
-│       └── review-tracker.md
+│       ├── backlog-builder/SKILL.md
+│       ├── code-reviewer/SKILL.md
+│       ├── git-ops/SKILL.md
+│       ├── market-analysis/SKILL.md
+│       ├── milestone-planner/SKILL.md
+│       ├── programmer/SKILL.md
+│       ├── requirements-analysis/SKILL.md
+│       ├── review-tracker/SKILL.md
+│       ├── rtm-builder/SKILL.md
+│       ├── software-architecture-design/SKILL.md
+│       ├── state-manager/SKILL.md
+│       ├── test-reporter/SKILL.md
+│       ├── testcase-designer/SKILL.md
+│       └── version-manager/SKILL.md
 │
 ├── .npd-status.json                    #   项目状态 (含 gate decisions)
-├── npd-sw-install.sh                   #   脚手架脚本
+├── install.sh                          #   脚手架脚本
 ├── docs/
 │   ├── 01-Concept/
 │   ├── 02-Requirement/
@@ -127,12 +127,12 @@ chmod +x npd-sw-install.sh
 ### 完整流程
 
 ```
-Phase 0: /npd-concept           → 输出评审 -> Phase 0 Approved
-Phase 1: /npd-requirement       → 输出评审 -> Phase 1 Approved
-Phase 2: /npd-design            → 输出评审 -> Phase 2 Approved
-Phase 3: /npd-develop (per M{n}) → 输出评审 -> Review Passed: M{n}
-Phase 4: /npd-test              → 所有 ST 通过
-Phase 5: /npd-launch            → 构建成功
+Phase 0: /npd-concept           → 文档审批 -> /npd-decision phase0 go
+Phase 1: /npd-requirement       → 文档审批 -> /npd-decision phase1 go
+Phase 2: /npd-design            → 文档审批 -> /npd-decision phase2 go
+Phase 3: /npd-develop (per M{n}) → 里程碑评审 -> /npd-decision M{n} go
+Phase 4: /npd-test              → /npd-decision phase4 go
+Phase 5: /npd-launch            → /npd-decision phase5 go
 ```
 
 ---
