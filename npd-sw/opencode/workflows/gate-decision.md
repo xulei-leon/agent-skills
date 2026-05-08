@@ -66,7 +66,7 @@ interface GateDecision {
 ### Step 7: Handle Rework
 - On `Rework`: needs fixes
 - Log the failure reason
-- Return to development fix loop (Step 8 in `agents/workflows/phase3-develop.md`)
+- Return to development fix loop (Step 8 in `opencode/workflows/phase3-develop.md`)
 - Max 3 rework attempts per milestone
 - After 3 reworks: escalate to No Go
 

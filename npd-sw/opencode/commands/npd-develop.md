@@ -4,7 +4,7 @@
 Execute TDD development loop for a milestone: UT case → Code → Test → Review.
 
 ## Workflow
-`agents/workflows/phase3-develop.md`
+`opencode/workflows/phase3-develop.md`
 
 ## Constraints
 - TDD is mandatory: write tests BEFORE implementation

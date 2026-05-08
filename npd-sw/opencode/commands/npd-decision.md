@@ -4,7 +4,7 @@
 Process a review gate decision for a milestone or phase.
 
 ## Workflow
-`agents/workflows/gate-decision.md`
+`opencode/workflows/gate-decision.md`
 
 ## Constraints
 - Never auto-approve — always wait for explicit user signal

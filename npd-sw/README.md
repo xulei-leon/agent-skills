@@ -34,7 +34,7 @@
 
 ```
 npd-sw/
-├── agents/                           # ★ Command + Workflow + Skill 定义
+├── opencode/                           # ★ Command + Workflow + Skill 定义
 │   ├── commands/                       #   命令定义
 │   │   ├── npd-concept.md
 │   │   ├── npd-requirement.md
