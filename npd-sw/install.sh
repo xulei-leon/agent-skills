@@ -36,6 +36,28 @@ print_usage() {
   echo "  $0 init .                  # Initialize in current directory"
 }
 
+# ─── Template Copy Helper ──────────────────────────────
+# Copies a -template file to target. If the non-template version exists,
+# copies as -template (reference only). Otherwise strips -template suffix.
+copy_template() {
+  local src="$1"
+  local dst_dir="$2"
+  local basename="$(basename "$src")"
+
+  # Strip -template suffix: file-template.ext → file.ext
+  local base="${basename%-template*}"
+  local ext="${basename##*.}"
+  local target_name="${base}.${ext}"
+
+  if [ -f "$dst_dir/$target_name" ]; then
+    cp "$src" "$dst_dir/$basename"
+    echo "  ✓ Template: $basename ($target_name exists)"
+  else
+    cp "$src" "$dst_dir/$target_name"
+    echo "  ✓ Copied: $target_name"
+  fi
+}
+
 # ─── Init Project ────────────────────────────────────
 cmd_init() {
   local target="${1:-.}"
@@ -60,6 +82,7 @@ cmd_init() {
     "$target/docs/03-Design"
     "$target/docs/04-Develop"
     "$target/docs/05-Test"
+    "$target/docs/06-Launch"
     "$target/test/st"
     "$target/test/ut"
     "$target/test/results"
@@ -94,29 +117,33 @@ cmd_init() {
     fi
   done
 
-  # Copy sprint
+  # Copy sprint templates
   for sprint_file in "$SCRIPT_DIR"/sprint/*.md; do
     if [ -f "$sprint_file" ]; then
-      cp "$sprint_file" "$target/sprint/"
-      echo "  ✓ Copied: sprint/$(basename "$sprint_file")"
+      copy_template "$sprint_file" "$target/sprint/"
     fi
   done
 
-  # Copy doc lifecycle templates (force override)
-  cp -r "$SCRIPT_DIR/docs/"* "$target/docs/"
-  echo "  ✓ Copied: doc lifecycle templates"
+  # Copy doc lifecycle templates (intelligently handle -template suffix)
+  for doc_subdir in "$SCRIPT_DIR"/docs/*/; do
+    local doc_dir_name="$(basename "$doc_subdir")"
+    for doc_file in "$doc_subdir"*.md "$doc_subdir"*.json; do
+      if [ -f "$doc_file" ]; then
+        mkdir -p "$target/docs/$doc_dir_name"
+        copy_template "$doc_file" "$target/docs/$doc_dir_name"
+      fi
+    done
+  done
   mkdir -p "$target/test/st"
   for st_file in "$SCRIPT_DIR"/test/st/*.md; do
     if [ -f "$st_file" ]; then
-      cp "$st_file" "$target/test/st/"
-      echo "  ✓ Copied: test/st/$(basename "$st_file")"
+      copy_template "$st_file" "$target/test/st/"
     fi
   done
   echo "  ✓ Created: test/results/"
 
   # Copy .npd-status template
-  cp "$SCRIPT_DIR/.npd-status-template.json" "$target/.npd-status-template.json"
-  echo "  ✓ Copied: .npd-status-template.json"
+  copy_template "$SCRIPT_DIR/.npd-status-template.json" "$target/"
 
   echo ""
   echo -e "${GREEN}════════════════════════════════════════════════════${NC}"
@@ -177,19 +204,19 @@ cmd_status() {
     ".opencode/skills/rtm-builder/SKILL.md"
     ".opencode/skills/backlog-builder/SKILL.md"
     ".opencode/skills/version-manager/SKILL.md"
-    "test/st/st-case-template.md"
-    "docs/01-Concept/Charter-template.md"
-    "docs/01-Concept/Market_Research-template.md"
-    "docs/01-Concept/User_Research-template.md"
-    "docs/02-Requirement/SRS-template.md"
+    "test/st/st-case.md"
+    "docs/01-Concept/Charter.md"
+    "docs/01-Concept/Market_Research.md"
+    "docs/01-Concept/User_Research.md"
+    "docs/02-Requirement/SRS.md"
     ".npd-status.json"
-    "sprint/backlog-template.md"
-    "sprint/sprint-template.md"
-    "docs/03-Design/SAD-template.md"
-    "docs/03-Design/milestones-template.md"
-    "docs/03-Design/RTM-template.md"
-    "docs/05-Test/test-strategy-template.md"
-    "docs/05-Test/test-design-template.md"
+    "sprint/backlog.md"
+    "sprint/sprint.md"
+    "docs/03-Design/SAD.md"
+    "docs/03-Design/milestones.md"
+    "docs/03-Design/RTM.md"
+    "docs/05-Test/test-strategy.md"
+    "docs/05-Test/test-design.md"
     ".opencode/workflows"
   )
 
