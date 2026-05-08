@@ -6,7 +6,7 @@ Complete Phase 1: produce SRS and System Test cases.
 
 ### Step 1: Create SRS
 - Use the `requirements-analysis` skill
-- Input: user's project requirements
+- Input: user's project requirements (and Charter from Phase 0 if Concept is enabled)
 - Output: `docs/02-Requirement/SRS.md`
 - Use `Version: 1.0.0` (bump on subsequent edits)
 - Functional requirements numbered as `FR-001`, `FR-002`, etc.

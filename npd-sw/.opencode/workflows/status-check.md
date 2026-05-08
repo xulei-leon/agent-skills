@@ -5,19 +5,20 @@ Display current project status by scanning files and state.
 ## Steps
 
 ### Step 1: Scan Project Files
+- Read `.npd-status.json` to check which phases are enabled
 - Check existence of:
   - `.npd-status.json` — project status overview
   - `sprint/sprint.md` — sprint plan
-  - `docs/01-Concept/Charter.md` — project charter
-  - `docs/01-Concept/Market_Research.md` — market research
-  - `docs/01-Concept/User_Research.md` — user research
+  - `docs/01-Concept/Charter.md` — project charter (skip if Concept phase `enable: false`)
+  - `docs/01-Concept/Market_Research.md` — market research (skip if Concept phase `enable: false`)
+  - `docs/01-Concept/User_Research.md` — user research (skip if Concept phase `enable: false`)
   - `docs/02-Requirement/SRS.md` — SRS
   - `sprint/backlog.md` — backlog items
   - `docs/03-Design/SAD.md` — SAD
   - `docs/03-Design/RTM.md` — RTM
-  - `test/st/*.test.*` — system test cases
-  - `test/ut/*.test.*` — unit test cases
-  - `src/` — source code
+  - `test/st/*.test.*` — system test cases (skip if Test phase `enable: false`)
+  - `test/ut/*.test.*` — unit test cases (skip if Develop phase `enable: false`)
+  - `src/` — source code (skip if Develop phase `enable: false`)
 
 ### Step 2: Print Report
 - Format:

@@ -32,7 +32,8 @@ Complete Phase 4: run full system test suite and generate test report.
 ### Step 4: Output Completion Signal
 - Print `[Phase 4 Complete]` with test summary
 - All milestones pass confirmation
-- Proceed to Phase 5 (Launch) when ready
+- Check `.npd-status.json`: if the next enabled phase (Launch or other) is `enable: true`, recommend proceeding to it
+- If no next enabled phase exists, mark project as complete
 
 ## Exit Criteria
 - All system tests pass

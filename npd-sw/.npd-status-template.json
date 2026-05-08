@@ -2,12 +2,12 @@
   "project": "{PROJECT_NAME}",
   "updatedAt": "{DATE}",
   "phases": [
-    { "id": 0, "name": "Concept", "command": "/npd-concept", "status": "Pending" },
-    { "id": 1, "name": "Requirement", "command": "/npd-requirement", "status": "Pending" },
-    { "id": 2, "name": "Design", "command": "/npd-design", "status": "Pending" },
-    { "id": 3, "name": "Develop", "command": "/npd-develop", "status": "Pending" },
-    { "id": 4, "name": "Test", "command": "/npd-test", "status": "Pending" },
-    { "id": 5, "name": "Launch", "command": "/npd-launch", "status": "Pending" }
+    { "id": 0, "name": "Concept", "command": "/npd-concept", "enable": true, "status": "Pending" },
+    { "id": 1, "name": "Requirement", "command": "/npd-requirement", "enable": true, "status": "Pending" },
+    { "id": 2, "name": "Design", "command": "/npd-design", "enable": true, "status": "Pending" },
+    { "id": 3, "name": "Develop", "command": "/npd-develop", "enable": true, "status": "Pending" },
+    { "id": 4, "name": "Test", "command": "/npd-test", "enable": true, "status": "Pending" },
+    { "id": 5, "name": "Launch", "command": "/npd-launch", "enable": true, "status": "Pending" }
   ],
   "documents": [
     { "name": "Project Charter", "path": "docs/01-Concept/Charter.md", "version": "1.0.0", "status": "Draft" },

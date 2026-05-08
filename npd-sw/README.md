@@ -28,6 +28,8 @@
 | 4 | **测试 (Test)** | System Test Report | 所有 ST 通过 |
 | 5 | **发布 (Launch)** | build-report, CHANGELOG, Git Tag | 构建成功 |
 
+> 各阶段可通过 `.npd-status.json` 中的 `enable` 字段控制是否启用。设为 `false` 则跳过该阶段，工作流会自动寻找下一个启用的阶段。
+
 ---
 
 ## 目录结构

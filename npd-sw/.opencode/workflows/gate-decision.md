@@ -51,7 +51,8 @@ interface GateDecision {
 
 ### Step 4: Handle Go
 - On `Go`: advance to next phase or milestone
-- Recommend the next command (e.g., `/npd-requirement` after Phase 0)
+- Recommend the next command: scan forward through phases in `.npd-status.json`, skip those with `enable: false`, and suggest the first enabled phase that isn't yet completed
+- Example: if Phase 0 Go and Phase 1 is enabled → `/npd-requirement`; if Phase 0 Go but Phase 1 is disabled → skip to the next enabled phase
 
 ### Step 5: Handle No Go
 - On `No Go`: phase or milestone is rejected
