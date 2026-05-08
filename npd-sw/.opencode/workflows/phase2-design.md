@@ -51,7 +51,7 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 - Use the `version-manager` skill to bump document versions
 - Bump `docs/03-Design/SAD.md`, `docs/03-Design/RTM.md`, `docs/03-Design/milestones.md` if modified
 - Print `[Phase 2 Exit Check]` with checklist
-- Wait for user reply: `Phase 2 Approved` to advance
+- User confirms with: `/npd-decision SAD.md approved`, `/npd-decision RTM.md approved`, then `/npd-decision phase2 go`
 
 ## Exit Criteria
 - SAD created and consistent with SRS
@@ -59,4 +59,4 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 - Milestone plan completed (`docs/03-Design/milestones.md`)
 - Backlog populated in `sprint/backlog.md`
 - RTM has full traceability (FR → Module → US → ST)
-- User confirms with `Phase 2 Approved`
+- User confirms with `/npd-decision phase2 go`

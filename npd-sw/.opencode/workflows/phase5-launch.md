@@ -34,7 +34,7 @@ Complete Phase 5: build verification, changelog, and Git tag.
   - CHANGELOG.md updated
   - Release note generated
   - Git tag created
-- Confirm project is ready for production deployment
+- Confirm with `/npd-decision phase5 go` to mark project complete
 
 ## Exit Criteria
 - All milestones have gate `Go`
@@ -42,3 +42,4 @@ Complete Phase 5: build verification, changelog, and Git tag.
 - CHANGELOG.md updated
 - Release note generated (`docs/06-Launch/release-note.md`)
 - Git tag created
+- User confirms with `/npd-decision phase5 go`

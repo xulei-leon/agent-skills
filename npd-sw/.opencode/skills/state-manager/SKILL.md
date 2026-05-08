@@ -13,6 +13,8 @@ State Manager
 - **advance**(targetPhase, subphase): move to next phase
 - **markDoc**(docPath): record completed document
 - **markMilestone**(milestone): record completed milestone
+- **approveDoc**(docPath): `void` — set document status to "Approved" in `.npd-status.json.documents[]`
+- **nextCommand**(currentPhaseId): `string` — scan forward through phases, skip `enable: false`, return the first non-completed phase's command
 
 ## Implementation
 State tracking is through `.npd-status.json` and sprint/backlog.md.

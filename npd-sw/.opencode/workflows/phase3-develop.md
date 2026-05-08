@@ -40,10 +40,10 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 
 ### Step 7: Output Review Signal (Gate Decision)
 - Print `[Review Gate]` with test results summary
+- User confirms with: `/npd-decision M{n} go` or `/npd-decision M{n} rework: <reason>`
 - Use the `gate-decision` workflow to process user signal:
   - `Go` → milestone passed, proceed to Step 9
   - `Rework` → needs fixes (go to Step 8)
-- Wait for user reply: `Go` or `Rework: {reason}`
 
 ### Step 8 (on Rework)
 - If user replies `Rework: {reason}`:

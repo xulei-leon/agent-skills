@@ -24,9 +24,9 @@ Complete Phase 1: produce SRS and System Test cases.
 - Use the `version-manager` skill to bump document versions
 - Bump `docs/02-Requirement/SRS.md` if modified
 - Print `[Phase 1 Exit Check]` with checklist
-- Wait for user reply: `Phase 1 Approved` to advance
+- User confirms with: `/npd-decision SRS.md approved` then `/npd-decision phase1 go`
 
 ## Exit Criteria
 - SRS and ST cases all created
 - Every FR is testable and traceable
-- User confirms with `Phase 1 Approved`
+- User confirms with `/npd-decision phase1 go`

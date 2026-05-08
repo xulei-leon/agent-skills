@@ -1,6 +1,6 @@
 ---
 name: review-tracker
-description: Track milestone gate decisions with submit, resolve, and status check operations.
+description: Track document approvals and milestone/phase gate decisions. Record to .npd-status.json.
 license: MIT
 ---
 
@@ -10,10 +10,19 @@ license: MIT
 Review Tracker
 
 ## Interface
-- **submit**(milestone): `GateDecision` — submit milestone for gate decision
-- **resolve**(milestone, decision, comments?, reviewer?): `GateDecision` — record Go/No Go/Hold/Rework
-- **canProceed**(milestone): `boolean` — check if decision is Go
+
+### Document Approval
+- **approveDoc**(docPath): `void` — find document in `.npd-status.json.documents[]` by path (partial match on filename), set `status = "Approved"`, update `updatedAt`
+
+### Milestone / Phase Gates
+- **submit**(target): `GateDecision` — submit phase/milestone for gate decision
+- **resolve**(target, decision, comments?, reviewer?): `GateDecision` — record Go/No Go/Hold/Rework
+- **canProceed**(target): `boolean` — check if decision is Go
 - **read**(): `GateDecision[]` — read all gate states
+
+### Phase Advancement
+- **advancePhase**(phaseId): `void` — set `phases[id].status = "Completed"`, then scan forward for next enabled phase
+- **nextCommand**(currentPhaseId): `string` — recommend next enabled phase's command
 
 ## Gate Schema
 ```json

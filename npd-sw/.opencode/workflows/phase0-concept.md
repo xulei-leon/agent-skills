@@ -18,7 +18,8 @@ Complete Phase 0: research → approve → charter → approve.
 - Print `[Research Review]` with checklist:
   - Market Research
   - User Research
-- Wait for user reply: `Research Approved` to proceed, or modification requests
+- User confirms with: `/npd-decision Market_Research.md approved` and `/npd-decision User_Research.md approved`
+- This records the approval in `.npd-status.json.documents[].status`
 
 ### Step 4: Create Charter
 - Use the `market-analysis` skill
@@ -32,10 +33,11 @@ Complete Phase 0: research → approve → charter → approve.
 - Bump `docs/01-Concept/Charter.md`, `docs/01-Concept/Market_Research.md`, `docs/01-Concept/User_Research.md` if modified
 - Print `[Charter Review]` with checklist:
   - Charter
-- Wait for user reply: `Charter Approved` to complete Phase 0
+- User confirms with: `/npd-decision Charter.md approved` to approve the Charter
+- Then: `/npd-decision phase0 go` to complete Phase 0
 
 ## Exit Criteria
 - Market Research and User Research completed and approved
 - Charter created and approved
 - Each document has `Version: x.y.z` header
-- User confirms with `Charter Approved`
+- User confirms with `/npd-decision phase0 go`

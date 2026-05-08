@@ -1,6 +1,6 @@
 # Gate Decision Workflow
 
-Track milestone/phase gate decisions: Go, No Go, Hold, Rework.
+Record decisions — approve a document, or set a gate for a phase/milestone.
 
 ## Data Types
 
@@ -18,66 +18,92 @@ interface GateDecision {
 
 ## Storage
 
-- File: `.npd-status.json` (under `gates` array)
-- Format: `GateDecision[]`
+- File: `.npd-status.json` — `gates` array + `documents[].status` + `phases[].status`
 
 ## Steps
 
-### Step 0: Parse User Signal
-- Detect signal from user input:
-  - `Go` → gate passed, proceed
-  - `No Go` → gate rejected, stop
-  - `Hold` → gate deferred, revisit later
-  - `Rework` → needs fixes before next review
+### Step 0: Parse Command
 
-### Step 1: Submit for Gate Decision
-- Input: milestone or phase identifier (e.g. `"M1"`, `"Phase 0"`)
-- Look up existing gate
-  - If exists: increment `attempt`, reset `status`, clear comments
+Split user input into `target`, `action`, and optional `reason`:
+
+| Input | target | action | reason |
+|-------|--------|--------|--------|
+| `SRS.md approved` | `SRS.md` | `approved` | — |
+| `phase1 go` | `phase1` | `go` | — |
+| `M1 rework: missing error handling` | `M1` | `rework` | `missing error handling` |
+
+Determine mode:
+- If `target` matches a filename in `.npd-status.json.documents[].path` → **Document Approval** mode
+- If `target` starts with `phase` → **Phase Gate** mode
+- If `target` matches `M<N>` → **Milestone Gate** mode
+
+---
+
+### Document Approval Mode
+
+### Step D1: Find Document
+- Read `.npd-status.json.documents[]`
+- Match `target` against `path` using the filename (e.g. `SRS.md` matches `docs/02-Requirement/SRS.md`)
+
+### Step D2: Update Status
+- Set `documents[i].status = "Approved"`
+- Update `updatedAt` to current timestamp
+- Persist to `.npd-status.json`
+
+### Step D3: Output
+- Print `[Document Approved] {path} → Approved`
+- If this was the last document needed for the current phase, suggest next command
+
+---
+
+### Phase/Milestone Gate Mode
+
+### Step G1: Parse Target
+- For `phase<N>`: extract phase id (e.g. `phase1` → id `1`)
+- For `M<N>`: milestone identifier (e.g. `M1`)
+
+### Step G2: Submit for Gate Decision
+- Look up existing gate for this target in `.npd-status.json.gates[]`
+  - If exists: increment `attempt`, reset `status`, clear `comments`
   - If new: create gate with `attempt: 1`
 - Persist to `.npd-status.json`
-- Output: `GateDecision`
 
-### Step 2: Record Decision
-- Input: milestone, decision (`Go` | `No Go` | `Hold` | `Rework`), comments[], reviewer?
-- Find gate (error if not found)
-- Set `status`, `resolvedAt`, `comments`, `reviewer`
+### Step G3: Record Decision
+- Set `status` to the action value (`Go` | `No Go` | `Hold` | `Rework`)
+- If `action` is `rework`, `hold`, or `nogo`, extract the reason from input (text after `:`)
+- Set `resolvedAt`, `comments`, `reviewer`
 - Persist
 
-### Step 3: Check Proceed Permission
-- Input: milestone
-- Read gates file → find gate → check `status === 'Go'`
-- Output: boolean
+### Step G4: Handle Go
+- On `Go`:
+  - If target is a phase: mark `phases[id].status = "Completed"`, then scan forward for next enabled phase and recommend its command
+  - If target is a milestone: recommend proceeding to next milestone or Phase 4
+- Print `[Gate: Go]` with next recommended command
 
-### Step 4: Handle Go
-- On `Go`: advance to next phase or milestone
-- Recommend the next command: scan forward through phases in `.npd-status.json`, skip those with `enable: false`, and suggest the first enabled phase that isn't yet completed
-- Example: if Phase 0 Go and Phase 1 is enabled → `/npd-requirement`; if Phase 0 Go but Phase 1 is disabled → skip to the next enabled phase
+### Step G5: Handle No Go / Hold
+- On `No Go` / `Hold`: log reason in `.npd-status.json`
+- Print `[Gate: {action}]` with reason
+- Project may need restructuring (No Go) or revisit later (Hold)
 
-### Step 5: Handle No Go
-- On `No Go`: phase or milestone is rejected
-- Log the reason in `.npd-status.json`
-- Project may need restructuring
-
-### Step 6: Handle Hold
-- On `Hold`: gate deferred
-- Log the reason and revisit conditions
-- Re-enter gate decision when conditions met
-
-### Step 7: Handle Rework
-- On `Rework`: needs fixes
-- Log the failure reason
+### Step G6: Handle Rework
+- On `Rework`: log failure reason
+- If target is a milestone: inform user of remaining attempts (max 3)
 - Return to development fix loop (Step 8 in `.opencode/workflows/phase3-develop.md`)
-- Max 3 rework attempts per milestone
-- After 3 reworks: escalate to No Go
 
 ## Usage
 
 ```markdown
-1. Submit: `submitForGate("M1")`
-2. Go: `resolveGate("M1", "Go", ["LGTM"], "reviewer")`
-3. No Go: `resolveGate("M1", "No Go", ["Unreasonable architecture"])`
-4. Hold: `resolveGate("M1", "Hold", ["Dependencies not ready"])`
-5. Rework: `resolveGate("M1", "Rework", ["Missing exception handling"])`
-6. Check: `canProceed("M1")` → `true` / `false`
+# Document approval
+/npd-decision SRS.md approved
+/npd-decision Charter.md approved
+
+# Phase gate
+/npd-decision phase1 go
+/npd-decision phase2 nogo: architecture not aligned
+/npd-decision phase0 hold: need more market research
+
+# Milestone gate
+/npd-decision M1 go
+/npd-decision M1 rework: missing exception handling
+/npd-decision M2 nogo: performance not met
 ```
