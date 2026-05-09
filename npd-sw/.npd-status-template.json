@@ -10,9 +10,9 @@
     { "id": 5, "name": "Launch", "command": "/npd-launch", "enable": true, "status": "Pending" }
   ],
   "documents": [
-    { "name": "Project Charter", "path": "docs/0-Concept/Charter.md", "version": "1.0.0", "status": "Draft" },
     { "name": "Market Research", "path": "docs/0-Concept/Market_Research.md", "version": "1.0.0", "status": "Draft" },
     { "name": "User Research", "path": "docs/0-Concept/User_Research.md", "version": "1.0.0", "status": "Draft" },
+    { "name": "Project Charter", "path": "docs/0-Concept/Charter.md", "version": "1.0.0", "status": "Draft" },
     { "name": "SRS", "path": "docs/1-Requirement/SRS.md", "version": "1.0.0", "status": "Draft" },
     { "name": "SAD", "path": "docs/2-Design/SAD.md", "version": "1.0.0", "status": "Draft" },
     { "name": "RTM", "path": "docs/2-Design/RTM.md", "version": "1.0.0", "status": "Draft" },
