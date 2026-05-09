@@ -15,11 +15,11 @@ RTM Builder
 - Traceability analysis and gap detection
 
 ## Interface
-- **buildInitial**(sad, srs): `docs/03-Design/RTM.md`
+- **buildInitial**(sad, srs): `docs/2-Design/RTM.md`
   - Input: SAD (architecture modules) + SRS (FR list)
   - Output: initial RTM with FR→Architecture Module mapping
   - US and ST columns left blank for later filling
-- **updateFull**(rtm, backlog, stCases): `docs/03-Design/RTM.md`
+- **updateFull**(rtm, backlog, stCases): `docs/2-Design/RTM.md`
   - Input: initial RTM + backlog (US) + system test cases (ST)
   - Output: full RTM with complete traceability
 

@@ -9,13 +9,13 @@ Display current project status by scanning files and state.
 - Check existence of:
   - `.npd-status.json` — project status overview
   - `sprint/sprint.md` — sprint plan
-  - `docs/01-Concept/Charter.md` — project charter (skip if Concept phase `enable: false`)
-  - `docs/01-Concept/Market_Research.md` — market research (skip if Concept phase `enable: false`)
-  - `docs/01-Concept/User_Research.md` — user research (skip if Concept phase `enable: false`)
-  - `docs/02-Requirement/SRS.md` — SRS
+  - `docs/0-Concept/Charter.md` — project charter (skip if Concept phase `enable: false`)
+  - `docs/0-Concept/Market_Research.md` — market research (skip if Concept phase `enable: false`)
+  - `docs/0-Concept/User_Research.md` — user research (skip if Concept phase `enable: false`)
+  - `docs/1-Requirement/SRS.md` — SRS
   - `sprint/backlog.md` — backlog items
-  - `docs/03-Design/SAD.md` — SAD
-  - `docs/03-Design/RTM.md` — RTM
+  - `docs/2-Design/SAD.md` — SAD
+  - `docs/2-Design/RTM.md` — RTM
   - `test/st/*.test.*` — system test cases (skip if Test phase `enable: false`)
   - `test/ut/*.test.*` — unit test cases (skip if Develop phase `enable: false`)
   - `src/` — source code (skip if Develop phase `enable: false`)

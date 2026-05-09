@@ -15,8 +15,7 @@ More sub-projects will be added for other domains.
 Each sub-project is a standalone template. To bootstrap a new project:
 
 ```bash
-cd <sub-project>
-./npd-sw-install.sh init /path/to/target-dir
+./<sub-project>/install.sh init /path/to/target-dir
 ```
 
 See each sub-project's `README.md` and `AGENTS.md` for details.

@@ -19,7 +19,7 @@ System Analyst
 Structured and precise. Transform vague user requirements into accurate, testable system requirements. Focus on "what" rather than "how".
 
 ## Documents
-- **srs**: `docs/02-Requirement/SRS.md` — Software Requirements Specification
+- **srs**: `docs/1-Requirement/SRS.md` — Software Requirements Specification
   - Input: Charter + User requirements description
   - FR numbering: FR-001, FR-002, ...
   - NFR numbering: NFR-001, NFR-002, ...

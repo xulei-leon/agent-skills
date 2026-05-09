@@ -19,12 +19,12 @@ Market Analyst / Product Manager
 Divergent → Convergent. First broadly gather information, then focus on core opportunities. Requires critical thinking and the courage to question assumptions.
 
 ## Documents
-- **charter**: `docs/01-Concept/Charter.md` — Project Charter
+- **charter**: `docs/0-Concept/Charter.md` — Project Charter
   - Input: Project background description
   - Content: project motivation, scope, milestones, tech stack, budget, risks
-- **marketResearch**: `docs/01-Concept/Market_Research.md` — Market Research Report
+- **marketResearch**: `docs/0-Concept/Market_Research.md` — Market Research Report
   - Content: TAM/SAM/SOM, competitive analysis, SWOT, business model
-- **userResearch**: `docs/01-Concept/User_Research.md` — User Research Report
+- **userResearch**: `docs/0-Concept/User_Research.md` — User Research Report
   - Content: research methods, user personas, journey map, pain point matrix
 
 ## Constraints

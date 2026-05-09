@@ -5,7 +5,7 @@
 > **状态**: Draft
 > **编制日期**: {DATE}
 > **最后更新**: {DATE}
-> **关联 SRS**: docs/02-Requirement/SRS.md
+> **关联 SRS**: docs/1-Requirement/SRS.md
 
 ---
 
@@ -72,12 +72,12 @@ project-root/
 │   ├── ut/              # 单元测试
 │   └── st/              # 系统测试
 ├── docs/
-│   ├── 01-Concept/      # 概念文档
-│   ├── 02-Requirement/  # 需求文档
-│   ├── 03-Design/       # 设计文档
-│   ├── 04-Develop/      # 开发文档
-│   ├── 05-Test/         # 测试文档
-│   └── 06-Launch/       # 发布文档
+│   ├── 0-Concept/      # 概念文档
+│   ├── 1-Requirement/  # 需求文档
+│   ├── 2-Design/       # 设计文档
+│   ├── 3-Develop/      # 开发文档
+│   ├── 4-Test/         # 测试文档
+│   └── 5-Launch/       # 发布文档
 ├── sprint/              # 迭代管理
 └── package.json
 ```

@@ -6,23 +6,23 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 
 ### Step 1: Create SAD (Architecture Design)
 - Use the `software-architecture-design` skill
-- Input: `docs/02-Requirement/SRS.md`
-- Output: `docs/03-Design/SAD.md`
+- Input: `docs/1-Requirement/SRS.md`
+- Output: `docs/2-Design/SAD.md`
 - Trace each architecture decision to FR/NFR
 - Include: tech stack rationale, module partitioning, interface definitions, data flow
 
 ### Step 2: Build Initial RTM (Requirements → Architecture)
 - Use the `rtm-builder` skill
-- Input: `docs/02-Requirement/SRS.md` + `docs/03-Design/SAD.md`
-- Output: `docs/03-Design/RTM.md` (initial)
+- Input: `docs/1-Requirement/SRS.md` + `docs/2-Design/SAD.md`
+- Output: `docs/2-Design/RTM.md` (initial)
 - Table: FR ID | Description | Architecture Module | ST | Status
 - Map each FR to its corresponding architecture module from SAD
 - ST and US columns remain pending (filled in later steps)
 
 ### Step 3: Milestone Planning (Feature Grouping)
 - Use the `milestone-planner` skill
-- Input: `docs/02-Requirement/SRS.md` (extract all FR/NFR)
-- Output: `docs/03-Design/milestones.md`
+- Input: `docs/1-Requirement/SRS.md` (extract all FR/NFR)
+- Output: `docs/2-Design/milestones.md`
 - Group FRs into 2-5 milestones (M1-M4) by functional coupling and priority
 
 ### Step 4: Create M0 Architecture Backlog
@@ -44,19 +44,19 @@ Complete Phase 2: create SAD, plan milestones, build backlog, and build RTM.
 ### Step 6: Update RTM (Full Traceability)
 - Use the `rtm-builder` skill
 - Input: initial RTM + backlog
-- Output: `docs/03-Design/RTM.md` (full)
+- Output: `docs/2-Design/RTM.md` (full)
 - Every FR must trace to at least one architecture module, one US, and one ST
 
 ### Step 7: Bump Versions and Output Review Signal
 - Use the `version-manager` skill to bump document versions
-- Bump `docs/03-Design/SAD.md`, `docs/03-Design/RTM.md`, `docs/03-Design/milestones.md` if modified
+- Bump `docs/2-Design/SAD.md`, `docs/2-Design/RTM.md`, `docs/2-Design/milestones.md` if modified
 - Print `[Phase 2 Exit Check]` with checklist
 - User confirms with: `/npd-decision SAD.md approved`, `/npd-decision RTM.md approved`, then `/npd-decision phase2 go`
 
 ## Exit Criteria
 - SAD created and consistent with SRS
 - Initial RTM built with FR→Architecture mapping
-- Milestone plan completed (`docs/03-Design/milestones.md`)
+- Milestone plan completed (`docs/2-Design/milestones.md`)
 - Backlog populated in `sprint/backlog.md`
 - RTM has full traceability (FR → Module → US → ST)
 - User confirms with `/npd-decision phase2 go`

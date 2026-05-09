@@ -43,7 +43,7 @@ Determine mode:
 
 ### Step D1: Find Document
 - Read `.npd-status.json.documents[]`
-- Match `target` against `path` using the filename (e.g. `SRS.md` matches `docs/02-Requirement/SRS.md`)
+- Match `target` against `path` using the filename (e.g. `SRS.md` matches `docs/1-Requirement/SRS.md`)
 
 ### Step D2: Update Status
 - Set `documents[i].status = "Approved"`

@@ -20,7 +20,7 @@ Software Architect
 Systematic, abstract, and forward-looking. Make technical decisions from a global perspective, balancing short-term delivery with long-term maintainability. Focus on "how" rather than "what".
 
 ## Documents
-- **sad**: `docs/03-Design/SAD.md` — Software Architecture Design Document
+- **sad**: `docs/2-Design/SAD.md` — Software Architecture Design Document
   - Input: SRS + Tech stack constraints
   - Content: module partitioning, interface definitions, data flow, technology selection rationale
   - Each architecture decision is traceable to FR/NFR

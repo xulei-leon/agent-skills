@@ -7,7 +7,7 @@ Complete Phase 1: produce SRS and System Test cases.
 ### Step 1: Create SRS
 - Use the `requirements-analysis` skill
 - Input: user's project requirements (and Charter from Phase 0 if Concept is enabled)
-- Output: `docs/02-Requirement/SRS.md`
+- Output: `docs/1-Requirement/SRS.md`
 - Use `Version: 1.0.0` (bump on subsequent edits)
 - Functional requirements numbered as `FR-001`, `FR-002`, etc.
 - Non-functional requirements numbered as `NFR-001`, `NFR-002`, etc.
@@ -22,7 +22,7 @@ Complete Phase 1: produce SRS and System Test cases.
 
 ### Step 3: Bump Versions and Output Review Signal
 - Use the `version-manager` skill to bump document versions
-- Bump `docs/02-Requirement/SRS.md` if modified
+- Bump `docs/1-Requirement/SRS.md` if modified
 - Print `[Phase 1 Exit Check]` with checklist
 - User confirms with: `/npd-decision SRS.md approved` then `/npd-decision phase1 go`
 

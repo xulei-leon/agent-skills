@@ -74,12 +74,12 @@ npd-sw/
 ├── .npd-status.json                    #   项目状态 (含 gate decisions)
 ├── install.sh                          #   脚手架脚本
 ├── docs/
-│   ├── 01-Concept/
-│   ├── 02-Requirement/
-│   ├── 03-Design/
-│   ├── 04-Develop/
-│   ├── 05-Test/
-│   └── 06-Launch/
+│   ├── 0-Concept/
+│   ├── 1-Requirement/
+│   ├── 2-Design/
+│   ├── 3-Develop/
+│   ├── 4-Test/
+│   └── 5-Launch/
 │
 └── test/
     ├── st/
@@ -93,11 +93,10 @@ npd-sw/
 
 ```bash
 git clone <repo-url>
-cd npd-sw
-chmod +x npd-sw-install.sh
+chmod +x ./npd-sw/install.sh
 
 # 初始化新项目
-./npd-sw-install.sh init /path/to/my-project
+./npd-sw/install.sh init /path/to/my-project
 ```
 
 ---

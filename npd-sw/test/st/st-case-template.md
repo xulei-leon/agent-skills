@@ -2,7 +2,7 @@
 
 > **项目名称**: {PROJECT_NAME}
 > **测试阶段**: 系统测试 (ST)
-> **关联 SRS**: docs/02-Requirement/SRS.md
+> **关联 SRS**: docs/1-Requirement/SRS.md
 > **创建日期**: {DATE}
 
 ---
