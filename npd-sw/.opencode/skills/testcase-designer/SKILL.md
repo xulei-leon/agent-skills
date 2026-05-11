@@ -18,12 +18,12 @@ Test Case Designer
 ## Interface
 - **unitTests**(milestoneSpec, acceptanceCriteria): `file[]`
   - Input: milestone User Stories + acceptance criteria
-  - Output: `test/ut/m{n}-us{yy}.test.*`
+  - Output: `test/unit/m{n}-us{yy}.test.*`
   - Cover ALL acceptance criteria for each US
 - **systemTests**(srs, frList): `file[]`
   - Input: SRS functional requirements
-  - Output: `test/st/st-cases.test.*`
-  - Follow template: `test/st/st-case-template.md`
+  - Output: `test/system/st-cases.test.*`
+  - Follow template: `test/system/st-case-template.md`
   - Given-When-Then with Traceability ID to FR
 
 ## Constraints

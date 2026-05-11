@@ -15,8 +15,8 @@ Complete Phase 1: produce SRS and System Test cases.
 ### Step 2: Create System Test Cases
 - Use the `testcase-designer` skill
 - Input: SRS functional requirements
-- Output: `test/st/st-cases.test.*`
-- Follow template: `test/st/st-case-template.md`
+- Output: `test/system/st-cases.test.*`
+- Follow template: `test/system/st-case-template.md`
 - Each ST must have Traceability ID pointing to a FR
 - Cover normal path, error path, and boundary conditions
 

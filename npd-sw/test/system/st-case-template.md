@@ -38,7 +38,7 @@
 ### 测试实现
 
 ```typescript
-// test/st/st-001.test.ts
+// test/system/st-001.test.ts
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 
 describe('ST-001: {测试用例名称}', () => {

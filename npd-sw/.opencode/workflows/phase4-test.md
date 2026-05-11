@@ -10,7 +10,7 @@ Complete Phase 4: run full system test suite and generate test report.
 
 ### Step 1: Run System Test Suite
 - Run `npm run test:st` (or language-appropriate ST command)
-- Cover all ST cases in `test/st/`
+- Cover all ST cases in `test/system/`
 - Each ST traces to a FR from SRS
 
 ### Step 2: Handle Failures

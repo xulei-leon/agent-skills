@@ -24,7 +24,7 @@ Milestone Plan → Sprint Plan → TDD Loop → Review → Next Milestone
 
 - 根据当前里程碑的 User Story 和验收标准 (AC) 编写 UT
 - 每个 UT 用例对应一个 AC
-- 测试文件位置：`test/ut/m{n}-us{yy}.test.*`
+- 测试文件位置：`test/unit/m{n}-us{yy}.test.*`
 - 此时测试预期失败（没有实现代码）
 
 ### 2. 绿 — 实现代码
@@ -129,17 +129,17 @@ Product Backlog，按里程碑分组 (M0~M4)：
 
 ## test/ 目录详解
 
-### test/ut/ — 单元测试
+### test/unit/ — 单元测试
 
-- 命名规范：`test/ut/m{n}-us{yy}.test.{ext}`
-- 示例：`test/ut/m1-us01.test.ts`
+- 命名规范：`test/unit/m{n}-us{yy}.test.{ext}`
+- 示例：`test/unit/m1-us01.test.ts`
 - 每个 UT 文件对应一个 User Story
 - 覆盖率要求：核心逻辑 ≥ 90%，整体 ≥ 80%
 
-### test/st/ — 系统测试
+### test/system/ — 系统测试
 
-- 命名规范：`test/st/st-{id}.test.{ext}`
-- 示例：`test/st/st-001.test.ts`
+- 命名规范：`test/system/st-{id}.test.{ext}`
+- 示例：`test/system/st-001.test.ts`
 - 每个 ST 对应 SRS 中的一个 FR
 - 覆盖正常路径、异常路径、边界条件
 

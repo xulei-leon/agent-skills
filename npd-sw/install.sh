@@ -83,8 +83,8 @@ cmd_init() {
     "$target/docs/3-Develop"
     "$target/docs/4-Test"
     "$target/docs/5-Launch"
-    "$target/test/st"
-    "$target/test/ut"
+    "$target/test/system"
+    "$target/test/unit"
     "$target/test/results"
     "$target/src"
   )
@@ -134,10 +134,10 @@ cmd_init() {
       fi
     done
   done
-  mkdir -p "$target/test/st"
-  for st_file in "$SCRIPT_DIR"/test/st/*.md; do
+  mkdir -p "$target/test/system"
+  for st_file in "$SCRIPT_DIR"/test/system/*.md; do
     if [ -f "$st_file" ]; then
-      copy_template "$st_file" "$target/test/st/"
+      copy_template "$st_file" "$target/test/system/"
     fi
   done
   echo "  ✓ Created: test/results/"
@@ -204,7 +204,7 @@ cmd_status() {
     ".opencode/skills/rtm-builder/SKILL.md"
     ".opencode/skills/backlog-builder/SKILL.md"
     ".opencode/skills/version-manager/SKILL.md"
-    "test/st/st-case.md"
+    "test/system/st-case-template.md"
     "docs/0-Concept/Charter.md"
     "docs/0-Concept/Market_Research.md"
     "docs/0-Concept/User_Research.md"

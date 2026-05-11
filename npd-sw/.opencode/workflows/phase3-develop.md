@@ -12,7 +12,7 @@ Execute TDD cycle for a milestone: UT → Code → Test → Review.
 ### Step 2: Generate Unit Tests (TDD)
 - Use the `testcase-designer` skill
 - Input: milestone User Stories and acceptance criteria
-- Output: `test/ut/m{n}-us{yy}.test.*`
+- Output: `test/unit/m{n}-us{yy}.test.*`
 - Cover ALL acceptance criteria for each US
 - Each UT must trace to a specific US acceptance criterion
 

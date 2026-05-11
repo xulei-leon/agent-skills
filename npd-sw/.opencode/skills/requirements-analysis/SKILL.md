@@ -23,8 +23,8 @@ Structured and precise. Transform vague user requirements into accurate, testabl
   - Input: Charter + User requirements description
   - FR numbering: FR-001, FR-002, ...
   - NFR numbering: NFR-001, NFR-002, ...
-- **stCases**: `test/st/st-cases.test.*` — System test cases
-  - Format: `test/st/st-case-template.md` template
+- **stCases**: `test/system/st-cases.test.*` — System test cases
+  - Format: `test/system/st-case-template.md` template
   - Given-When-Then
   - Each ST must have a Traceability ID pointing to an FR
   - Cover normal path, error path, and boundary conditions

@@ -16,8 +16,8 @@ Display current project status by scanning files and state.
   - `sprint/backlog.md` — backlog items
   - `docs/2-Design/SAD.md` — SAD
   - `docs/2-Design/RTM.md` — RTM
-  - `test/st/*.test.*` — system test cases (skip if Test phase `enable: false`)
-  - `test/ut/*.test.*` — unit test cases (skip if Develop phase `enable: false`)
+  - `test/system/*.test.*` — system test cases (skip if Test phase `enable: false`)
+  - `test/unit/*.test.*` — unit test cases (skip if Develop phase `enable: false`)
   - `src/` — source code (skip if Develop phase `enable: false`)
 
 ### Step 2: Print Report

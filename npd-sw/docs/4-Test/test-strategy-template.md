@@ -13,17 +13,17 @@
 - **目标**: 验证每个模块/函数的独立正确性
 - **工具**: TBD (Jest / Vitest / Mocha / Pytest)
 - **覆盖要求**: 核心逻辑 ≥ 90%，整体 ≥ 80%
-- **位置**: `test/ut/`
+- **位置**: `test/unit/`
 
 ### 1.2 集成测试 (Integration Test)
 - **目标**: 验证模块间协作和数据流转
 - **覆盖要求**: 所有接口路径
-- **位置**: `test/st/`
+- **位置**: `test/system/`
 
 ### 1.3 系统测试 (System Test)
 - **目标**: 验证端到端业务流程
 - **覆盖要求**: 所有 FR 需求
-- **位置**: `test/st/`
+- **位置**: `test/system/`
 
 ### 1.4 验收测试 (Acceptance Test)
 - **目标**: 验证 User Story 验收标准
@@ -52,8 +52,8 @@
 
 | 类型 | 模式 | 示例 |
 |------|------|------|
-| 单元测试 | `test/ut/m{n}-us{yy}.test.{ext}` | `test/ut/m1-us01.test.ts` |
-| 系统测试 | `test/st/st-{id}.test.{ext}` | `test/st/st-001.test.ts` |
+| 单元测试 | `test/unit/m{n}-us{yy}.test.{ext}` | `test/unit/m1-us01.test.ts` |
+| 系统测试 | `test/system/st-{id}.test.{ext}` | `test/system/st-001.test.ts` |
 | 测试结果 | `test/results/M{n}-test-report.md` | `test/results/M1-test-report.md` |
 
 ### 3.2 测试数据
