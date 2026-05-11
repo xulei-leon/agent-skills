@@ -1,0 +1,97 @@
+% ============================================================
+% Academic Paper LaTeX Template
+% Part of the OpenCode Academic Writing System
+% ============================================================
+%
+% Usage:
+%   1. Replace {PLACEHOLDERS} with actual content
+%   2. Place section files in sections/*.tex
+%   3. Compile: pdflatex paper && bibtex paper && pdflatex paper && pdflatex paper
+% ============================================================
+
+% ---------- Document Class ----------
+% Common options:
+%   article  — general purpose (default)
+%   IEEEtran — IEEE conferences [conference]
+%   llncs    — Springer LNCS
+%   cvpr     — CVPR/ICCV [review]
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Encoding & Fonts ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ---------- Math ----------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{mathtools}
+
+% ---------- Graphics ----------
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+
+% ---------- Tables ----------
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+% ---------- Hyperlinks ----------
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            citecolor=blue,
+            urlcolor=blue]{hyperref}
+
+% ---------- Bibliography ----------
+\usepackage[round,sort,comma,authoryear]{natbib}
+% Alternative: \usepackage[backend=biber,style=numeric]{biblatex}
+
+% ---------- Page Layout ----------
+\usepackage[margin=1in]{geometry}
+
+% ---------- Algorithms (optional) ----------
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+
+% ---------- Metadata ----------
+\title{{PAPER_TITLE}}
+
+\author{{AUTHOR_NAME} \\
+       \texttt{{AUTHOR_EMAIL}} \\
+       {AFFILIATION}}
+
+\date{\today}
+
+% ============================================================
+% Document Body
+% ============================================================
+\begin{document}
+
+\maketitle
+
+% ---------- Abstract ----------
+\begin{abstract}
+\input{sections/abstract}  % or write inline
+\end{abstract}
+
+% ---------- Sections ----------
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/methodology}
+\input{sections/experiments}
+\input{sections/conclusion}
+
+% ---------- Acknowledgments (optional) ----------
+% \section*{Acknowledgments}
+% We thank ...
+
+% ---------- Bibliography ----------
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% ---------- Appendix (optional) ----------
+% \appendix
+% \section{Proof of Theorem 1}
+% \label{sec:appendix_proof}
+% ...
+
+\end{document}

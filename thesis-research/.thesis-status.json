@@ -1,0 +1,37 @@
+{
+  "thesis": {
+    "enable": true,
+    "current_stage": "search",
+    "stages": {
+      "search": {
+        "status": "pending",
+        "rounds_completed": 0,
+        "candidates_generated": 0
+      },
+      "research": {
+        "status": "pending",
+        "papers_surveyed": 0,
+        "ideas_generated": 0,
+        "outline_complete": false
+      },
+      "writing": {
+        "status": "pending",
+        "sections_written": 0,
+        "review_cycles": 0,
+        "review_score": 0,
+        "compilation_success": false
+      },
+      "done": {
+        "status": "pending"
+      }
+    },
+    "project": {
+      "title": "",
+      "author": "",
+      "direction": "",
+      "keywords": [],
+      "selected_topic": "",
+      "venue": ""
+    }
+  }
+}
