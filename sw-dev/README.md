@@ -12,6 +12,7 @@
 
 | Command | Purpose | Skill Used |
 |---------|---------|------------|
+| `/swd-test-and-fix` | Run tests, fix failures, repeat until green | `swd-test-runner` + `swd-fixer` |
 | `/swd-debug` | Structured bug root cause analysis | `swd-debug-analyst` |
 | `/swd-fix` | Apply minimal verified fix (TDD for bugs) | `swd-fixer` |
 | `/swd-review` | Code review with security/performance checks | `swd-code-reviewer` |
