@@ -1,0 +1,16 @@
+{
+  "research": {
+    "enable": true,
+    "branch": "",
+    "baseline": 0,
+    "current_best": 0,
+    "metric_direction": "lower",
+    "experiments_run": 0,
+    "experiments_kept": 0,
+    "experiments_discarded": 0,
+    "experiments_crashed": 0,
+    "last_experiment_commit": "",
+    "started_at": "",
+    "last_updated": ""
+  }
+}
