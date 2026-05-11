@@ -5,8 +5,13 @@
     "stages": {
       "search": {
         "status": "pending",
-        "rounds_completed": 0,
-        "candidates_generated": 0
+        "current_search_stage": 1,
+        "dimensions_searched": [],
+        "interesting_dimensions": [],
+        "paper_pool_size": 0,
+        "topics_shortlisted": [],
+        "deep_dive_completed": false,
+        "final_topic_selected": null
       },
       "research": {
         "status": "pending",
