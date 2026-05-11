@@ -6,6 +6,10 @@ Perform a structured code review with security, performance, and maintainability
 ## Skill
 `.opencode/skills/code-reviewer/SKILL.md`
 
+## Inputs
+- Diff, pull request, or changed files
+- Intended behavior, requirement, or change summary
+
 ## Steps
 
 ### Step 1: Understand Context

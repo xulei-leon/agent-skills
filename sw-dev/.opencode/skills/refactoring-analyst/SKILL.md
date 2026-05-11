@@ -1,24 +1,33 @@
 ---
 name: refactoring-analyst
-description: Identify code smells, analyze technical debt, and plan safe refactoring strategies with test coverage.
+description: "Use when planning or executing safe refactoring. Identifies code smells, ranks refactoring opportunities, and defines behavior-preserving steps with validation."
 license: MIT
 ---
 
 # refactoring-analyst
 
-## Role
-Refactoring Analyst
+## Purpose
+Identify refactoring opportunities and define the safest next behavior-preserving improvement.
 
-## Expertise
-- Code smell detection
-- Technical debt assessment
-- Refactoring strategy design (safe, incremental)
-- Test coverage gap analysis
+## Required Inputs
+- Target code or module to inspect
+- Refactoring goal, smell, or maintenance pain point
+- Existing validation path such as tests, checks, or reproducible behavior
 
-## Interface
-- **analyze**(sourceCode): `RefactorPlan`
-  - Input: source files to analyze
-  - Output: prioritized refactoring plan with rationale
+## Optional Inputs
+- Hot paths, ownership concerns, recent defects, or planned adjacent changes
+
+## Clarify Before Proceeding
+- If the target slice is too broad, ask which file, module, or smell to prioritize.
+- If behavior expectations are unclear, ask what must remain unchanged.
+- If no validation path exists, ask whether characterization tests can be added first.
+
+## Execution Rules
+1. Establish a behavior baseline before proposing structural changes.
+2. Rank smells by risk reduction and maintenance payoff.
+3. Prefer one small refactoring step at a time.
+4. Follow project validation conventions before and after each step.
+5. Treat commit strategy as optional process advice, not a required outcome.
 
 ## Smell Catalog
 
@@ -36,20 +45,32 @@ Refactoring Analyst
 
 ## Constraints
 - Every refactoring must be verified: run tests before and after
-- One smell at a time; commit after each safe step
+- One smell at a time
 - Do NOT change external behavior — only internal structure
 - If tests don't exist, write characterization tests first
 
-## Guidelines
+## Output Template
 
-### Safe Refactoring Steps
-1. Ensure existing tests pass (create characterization tests if absent)
-2. Identify one smell and its refactoring target
-3. Apply smallest refactoring that addresses it
-4. Run tests — all must pass
-5. Commit the refactoring (separate from feature work)
+```markdown
+## Refactoring Plan
 
-### Prioritization
-- P0: Bug-prone smells (duplicate code, god class)
-- P1: Maintainability smells (long function, message chains)
-- P2: Readability smells (primitive obsession, long param list)
+### 1. Baseline
+{current behavior, validation status, and target slice}
+
+### 2. Ranked Smells
+- {smell} — {why it matters now}
+
+### 3. First Safe Step
+{smallest refactoring step to take next}
+
+### 4. Validation
+{checks to run before and after}
+
+### 5. Stop Conditions
+{signals that mean the refactor is getting too broad or risky}
+```
+
+## Fallbacks
+- If tests do not exist, recommend characterization tests before structural changes.
+- If the smallest safe step cannot be identified, stop and narrow the target slice.
+- If the refactor is entangled with a bug fix or feature request, split the work before proceeding.

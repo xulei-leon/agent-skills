@@ -1,64 +1,61 @@
 ---
 name: code-reviewer
-description: Review implementation code against architecture, coding standards, security, performance, and project conventions.
+description: "Use when performing code review on a diff, pull request, or changed files. Focus on correctness, security, performance, maintainability, and project conventions."
 license: MIT
 ---
 
 # code-reviewer
 
-## Role
-Code Reviewer
+## Purpose
+Produce a concise, evidence-based review of implementation changes with findings ranked by severity.
 
-## Interface
-- **review**(sourceCode, context): `ReviewResult`
-  - Input: source code changes + context (architecture doc, acceptance criteria)
-  - Output: review result with issue list by severity
+## Required Inputs
+- Diff, pull request, or list of changed files
+- Intended behavior, requirement, or problem being solved
 
-## Review Checklist
+## Optional Inputs
+- Architecture notes, API contracts, issue links, or acceptance criteria
+- Threat model, performance budget, or test results
 
-### Correctness
-- All acceptance criteria are covered
-- Input validation, edge cases, error paths handled
-- No logic errors or off-by-one mistakes
+## Clarify Before Proceeding
+- If no review scope is provided, ask which files or diff to review.
+- If the intended behavior is unclear, ask what the change is supposed to achieve.
+- If review context is incomplete, continue with a local code review and label any assumption-driven findings.
 
-### Architecture & Design
-- Follows module boundaries and SAD architecture
-- No inappropriate coupling or leaky abstractions
-- API contracts are consistent and well-defined
+## Execution Rules
+1. Review the changed slice before expanding to nearby code.
+2. Prioritize correctness, security, data integrity, performance, concurrency, and maintainability.
+3. Only raise findings you can justify from code, behavior, or a clear engineering principle.
+4. Separate confirmed issues from open questions.
+5. Respect existing project conventions; do not request style-only churn.
 
-### Security
-- No injection vulnerabilities (SQL, XSS, command injection)
-- Authentication/authorization checks in place
-- Secrets never logged or exposed
-- Input sanitized at trust boundaries
+## Output Template
 
-### Performance
-- No obvious O(n²) or worse algorithms where O(n) suffices
-- No unnecessary allocations in hot paths
-- Database queries indexed and not in loops (N+1)
+```markdown
+## Review Findings
 
-### Concurrency & Safety
-- Shared state properly synchronized
-- No deadlock or race condition risks
-- Async error handling (unhandled rejections)
+### Blockers
+- {file:line or area} — {problem, impact, and concrete fix direction}
 
-### Maintainability
-- Code is readable and self-documenting
-- No speculative abstractions or dead code
-- Only required changes made (no adjacent "improvements")
-- Error messages are actionable
+### Warnings
+- {file:line or area} — {risk, scenario, and recommended change}
+
+### Nits
+- {optional improvement with low risk and low urgency}
+
+### Open Questions
+- {missing context that affects confidence}
+
+### Residual Risks
+- {what was not verified or remains uncertain}
+```
 
 ## Constraints
-- Blocking issues (severity: blocker) must be resolved before merge
-- Non-blocking issues (severity: nit) are noted but optional
-- One review round; re-review only after fixes
+- Blockers are reserved for correctness, security, data loss, severe performance, or severe operability risks.
+- Do not block on personal preference or repo-consistent style.
+- If a concern is plausible but unproven, label it as a question or warning rather than a blocker.
 
-## Guidelines
-
-### Reject Overcomplication
-- "Would a senior engineer say this is overcomplicated?"
-- If a function is >50 lines, ask if it can be split.
-
-### Surgical Changes
-- Every changed line should trace to the user's request.
-- If you find unrelated issues, note them — don't block on them.
+## Fallbacks
+- If requirements are missing, review against observable invariants and clearly state assumptions.
+- If only a partial diff is available, review the touched slice and call out what could not be verified.
+- If test or runtime evidence is unavailable, avoid claiming behavior regressions as facts.

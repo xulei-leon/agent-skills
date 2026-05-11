@@ -1,27 +1,36 @@
 ---
 name: debug-analyst
-description: Structured bug root cause analysis using hypothesis-driven debugging, binary search, and dependency chain tracing.
+description: "Use when diagnosing a bug, regression, flaky behavior, or production failure. Applies hypothesis-driven debugging, minimal reproduction, and discriminating checks to isolate root cause."
 license: MIT
 ---
 
 # debug-analyst
 
-## Role
-Debug Analyst
+## Purpose
+Diagnose the most likely root cause of a bug before implementation changes begin.
 
-## Expertise
-- Hypothesis-driven debugging (scientific method)
-- Binary search / divide-and-conquer on code paths
-- Dependency chain tracing (call stack → data flow → side effects)
-- Minimal reproduction extraction
-- TDD debugging: write a failing test that exposes the bug before fixing
+## Required Inputs
+- Observed behavior and expected behavior
+- Reproduction steps, failing input, logs, stack trace, or a concrete symptom
+- Approximate scope: subsystem, file, endpoint, job, or recent change window
 
-## Interface
-- **analyze**(issue, context): `RootCauseReport`
-  - Input: bug description / reproduction steps / logs / stack trace / relevant source
-  - Output: root cause location + verification + fix direction
+## Optional Inputs
+- Screenshots, metrics, traces, recent commits, or environment details
+- Existing failing tests or known good behavior baselines
 
-## Output Format
+## Clarify Before Proceeding
+- If expected behavior is unclear, ask what the system should do instead.
+- If there is no reproduction path, ask for the smallest repeatable symptom or artifact.
+- If the scope is broad, ask for the first failing boundary: endpoint, file, job, or input set.
+
+## Execution Rules
+1. Reproduce the problem when feasible, or define the closest observable failure signal.
+2. Form ranked hypotheses and state what evidence would confirm or disprove each one.
+3. Choose the cheapest discriminating check before broad exploration.
+4. Isolate the controlling code path and identify the most specific plausible root cause.
+5. Do not start implementing a fix until the current leading hypothesis is supported by evidence.
+
+## Output Template
 
 ```markdown
 ## Root Cause Report
@@ -29,20 +38,23 @@ Debug Analyst
 ### 1. Observation
 {what happens vs what should happen}
 
-### 2. Hypotheses
+### 2. Assumptions
+- {assumption 1}
+
+### 3. Hypotheses
 - H1: {candidate cause} — {evidence for/against}
 - H2: {candidate cause} — {evidence for/against}
 
-### 3. Experiment
+### 4. Experiment
 {steps taken to isolate, e.g. write test, add assertion, binary search commits}
 
-### 4. Root Cause
+### 5. Root Cause
 {file:line} — {one-sentence explanation}
 
-### 5. Fix Direction
+### 6. Fix Direction
 {minimal change to fix}
 
-### 6. Verification
+### 7. Verification
 {test / assertion that proves the fix}
 ```
 
@@ -50,20 +62,9 @@ Debug Analyst
 - Do NOT fix random code — drive by hypotheses
 - Do NOT fix symptoms, fix root cause
 - Do NOT change unrelated code during debug
-- Verify the fix: the reproduction case must pass after fix
+- Verify the proposed root cause with a concrete check whenever possible.
 
-## Guidelines
-
-### Think Before Patching
-- Reproduce the bug first. If you can't reproduce, you can't verify.
-- State assumptions explicitly. If uncertain, ask.
-- For multi-step debugging, state a plan with verification checkpoints.
-
-### Minimal Reproduction
-- Strip away irrelevant code until the bug disappears or becomes obvious.
-- If removing code makes the bug go away, you found the interaction.
-
-### Binary Search
-- For regression bugs: bisect git history.
-- For input/data bugs: bisect input size or data fields.
-- For code path bugs: bisect with early-return / logging probes.
+## Fallbacks
+- If the bug cannot be reproduced, return the highest-value next experiment instead of overstating confidence.
+- If multiple hypotheses remain plausible, say what one additional check would discriminate between them.
+- If no code path can yet be isolated, stop at the boundary where evidence runs out and ask for the missing artifact.

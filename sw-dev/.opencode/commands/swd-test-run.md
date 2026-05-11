@@ -6,6 +6,10 @@ Run tests, report results, and diagnose failures with actionable output.
 ## Skill
 `.opencode/skills/test-runner/SKILL.md`
 
+## Inputs
+- Requested scope: full suite, module, directory, or individual file
+- Project test command, or enough repo context to detect one safely
+
 ## Steps
 
 ### Step 1: Determine Scope

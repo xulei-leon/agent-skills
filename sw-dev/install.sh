@@ -12,7 +12,7 @@ print_usage() {
   echo "Usage: $0 <target-dir>"
   echo ""
   echo "Installs sw-dev commands & skills into <target-dir>'s .opencode/ directory."
-  echo "Safe to run on an existing npd-sw project — coexists without overwriting."
+  echo "Safe to run in any project that already contains .opencode/."
 }
 
 if [ $# -lt 1 ]; then
@@ -23,7 +23,7 @@ fi
 TARGET="$1"
 
 if [ ! -d "$TARGET/.opencode" ]; then
-  echo "Error: $TARGET/.opencode not found. Is this an npd-sw project?"
+  echo "Error: $TARGET/.opencode not found. Create or install .opencode first."
   exit 1
 fi
 
@@ -33,12 +33,16 @@ echo "║     SW-DEV Commands & Skills Installer           ║"
 echo "╚══════════════════════════════════════════════════╝"
 echo ""
 
+cmd_count=0
+skill_count=0
+
 # Copy commands
 mkdir -p "$TARGET/.opencode/commands"
 for cmd_file in "$SCRIPT_DIR"/.opencode/commands/*.md; do
   if [ -f "$cmd_file" ]; then
     cp "$cmd_file" "$TARGET/.opencode/commands/"
     echo "  ✓ Command: $(basename "$cmd_file")"
+    cmd_count=$((cmd_count + 1))
   fi
 done
 
@@ -49,15 +53,15 @@ for skill_dir in "$SCRIPT_DIR"/.opencode/skills/*/; do
     mkdir -p "$TARGET/.opencode/skills/$skill_name"
     cp "$skill_dir"SKILL.md "$TARGET/.opencode/skills/$skill_name/"
     echo "  ✓ Skill: $skill_name"
+    skill_count=$((skill_count + 1))
   fi
 done
 
 echo ""
-echo -e "Done. ${#cmds[@]} commands, ${#skills[@]} skills installed."
+echo -e "Done. $cmd_count commands, $skill_count skills installed."
 echo ""
 echo "Available commands:"
 for cmd in "$TARGET"/.opencode/commands/swd-*.md; do
   name="$(basename "$cmd" .md)"
-  desc="$(head -3 "$cmd" | tail -1 | sed 's/^#* *//')"
   echo "  /$name"
 done

@@ -6,6 +6,10 @@ Analyze and locate the root cause of a difficult bug using structured hypothesis
 ## Skill
 `.opencode/skills/debug-analyst/SKILL.md`
 
+## Inputs
+- Observed behavior, expected behavior, and reproduction details if available
+- Logs, stack trace, failing input, recent changes, or likely subsystem
+
 ## Steps
 
 ### Step 1: Understand the Bug

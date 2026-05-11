@@ -6,6 +6,11 @@ Apply a minimal, verified fix for a confirmed root cause using TDD — write a f
 ## Skill
 `.opencode/skills/fixer/SKILL.md`
 
+## Inputs
+- Confirmed root cause or a reproducible failing behavior
+- Target code area and a validation path
+- Compatibility constraints if public contracts may be affected
+
 ## Steps
 
 ### Step 1: Understand Root Cause
@@ -31,7 +36,7 @@ Apply a minimal, verified fix for a confirmed root cause using TDD — write a f
 - Verification: test output showing green
 
 ## Constraints
-- Fix must be surgical — touch only the lines that need changing
 - Always write the failing test BEFORE the fix (TDD for bugs)
 - If the fix causes existing tests to fail, revert and reconsider approach
+- Fix must be surgical — touch only the lines that need changing
 - Do NOT add new features or scope-creep during a fix

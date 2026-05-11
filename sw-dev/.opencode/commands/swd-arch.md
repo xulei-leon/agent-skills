@@ -6,6 +6,11 @@ Review or design software architecture — module boundaries, API contracts, dat
 ## Skill
 `.opencode/skills/architect/SKILL.md`
 
+## Inputs
+- Target system, service, module, or change
+- Requirements, constraints, or design question
+- Existing architecture context if available
+
 ## Steps
 
 ### Step 1: Understand Context
@@ -30,3 +35,4 @@ Review or design software architecture — module boundaries, API contracts, dat
 - Design for current requirements, not speculative future needs
 - Prefer simple solutions; only add complexity when justified by requirements
 - API-first: define interfaces before implementation begins
+- Do not require workflows, ADRs, or repo-specific governance unless the project already uses them

@@ -6,6 +6,11 @@ Identify code smells and safely refactor without changing external behavior.
 ## Skill
 `.opencode/skills/refactoring-analyst/SKILL.md`
 
+## Inputs
+- Target file, module, or subsystem
+- Refactoring goal, smell, or maintenance concern
+- Behavior baseline or validation path
+
 ## Steps
 
 ### Step 1: Analyze
@@ -27,7 +32,7 @@ Identify code smells and safely refactor without changing external behavior.
 - Confirm no behavior change (same inputs → same outputs)
 
 ## Constraints
-- One smell per commit — do NOT batch refactorings
+- One smell at a time — do NOT batch unrelated refactorings
 - Do NOT add features or fix bugs during refactoring
-- If tests fail, revert the last change and try a smaller step
+- If validation fails, reduce the step size or re-baseline before continuing
 - Max 3 smells per session

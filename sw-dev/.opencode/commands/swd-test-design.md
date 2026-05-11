@@ -6,6 +6,11 @@ Design comprehensive test cases with mock strategies, parameterized tests, bound
 ## Skill
 `.opencode/skills/testcase-designer/SKILL.md`
 
+## Inputs
+- Feature, module, API, or behavior under test
+- Expected behavior, acceptance criteria, contract, or observable invariants
+- Desired test level and existing project conventions if known
+
 ## Steps
 
 ### Step 1: Analyze Target
