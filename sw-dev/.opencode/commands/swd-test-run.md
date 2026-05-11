@@ -4,7 +4,7 @@
 Run tests, report results, and diagnose failures with actionable output.
 
 ## Skill
-`.opencode/skills/test-runner/SKILL.md`
+`.opencode/skills/swd-test-runner/SKILL.md`
 
 ## Inputs
 - Requested scope: full suite, module, directory, or individual file

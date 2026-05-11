@@ -1,5 +1,5 @@
 ---
-name: architect
+name: swd-architect
 description: "Use when reviewing or designing software architecture. Covers module boundaries, API contracts, data modeling, integration points, and technology trade-offs."
 license: MIT
 ---

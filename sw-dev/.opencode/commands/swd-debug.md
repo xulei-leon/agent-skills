@@ -4,7 +4,7 @@
 Analyze and locate the root cause of a difficult bug using structured hypothesis-driven debugging.
 
 ## Skill
-`.opencode/skills/debug-analyst/SKILL.md`
+`.opencode/skills/swd-debug-analyst/SKILL.md`
 
 ## Inputs
 - Observed behavior, expected behavior, and reproduction details if available

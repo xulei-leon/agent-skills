@@ -1,5 +1,5 @@
 ---
-name: testcase-designer
+name: swd-testcase-designer
 description: "Use when designing unit, integration, or characterization tests. Produces traceable test cases, boundary coverage, and mock strategies that fit existing project conventions."
 license: MIT
 ---

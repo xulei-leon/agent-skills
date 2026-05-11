@@ -4,7 +4,7 @@
 Perform a structured code review with security, performance, and maintainability checks.
 
 ## Skill
-`.opencode/skills/code-reviewer/SKILL.md`
+`.opencode/skills/swd-code-reviewer/SKILL.md`
 
 ## Inputs
 - Diff, pull request, or changed files

@@ -1,5 +1,5 @@
 ---
-name: test-runner
+name: swd-test-runner
 description: "Use when running tests, reporting failures, or diagnosing broken suites. Detects project test commands, reports actionable results, and classifies failures."
 license: MIT
 ---

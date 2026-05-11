@@ -1,5 +1,5 @@
 ---
-name: refactoring-analyst
+name: swd-refactoring-analyst
 description: "Use when planning or executing safe refactoring. Identifies code smells, ranks refactoring opportunities, and defines behavior-preserving steps with validation."
 license: MIT
 ---

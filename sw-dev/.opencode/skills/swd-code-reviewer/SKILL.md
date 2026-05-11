@@ -1,5 +1,5 @@
 ---
-name: code-reviewer
+name: swd-code-reviewer
 description: "Use when performing code review on a diff, pull request, or changed files. Focus on correctness, security, performance, maintainability, and project conventions."
 license: MIT
 ---

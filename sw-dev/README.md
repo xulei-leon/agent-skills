@@ -12,13 +12,13 @@
 
 | Command | Purpose | Skill Used |
 |---------|---------|------------|
-| `/swd-debug` | Structured bug root cause analysis | `debug-analyst` |
-| `/swd-fix` | Apply minimal verified fix (TDD for bugs) | `fixer` |
-| `/swd-review` | Code review with security/performance checks | `code-reviewer` |
-| `/swd-refactor` | Safe incremental refactoring | `refactoring-analyst` |
-| `/swd-arch` | Architecture review and design | `architect` |
-| `/swd-test-design` | Advanced test case design with mock strategies | `testcase-designer` |
-| `/swd-test-run` | Run tests and diagnose failures | `test-runner` |
+| `/swd-debug` | Structured bug root cause analysis | `swd-debug-analyst` |
+| `/swd-fix` | Apply minimal verified fix (TDD for bugs) | `swd-fixer` |
+| `/swd-review` | Code review with security/performance checks | `swd-code-reviewer` |
+| `/swd-refactor` | Safe incremental refactoring | `swd-refactoring-analyst` |
+| `/swd-arch` | Architecture review and design | `swd-architect` |
+| `/swd-test-design` | Advanced test case design with mock strategies | `swd-testcase-designer` |
+| `/swd-test-run` | Run tests and diagnose failures | `swd-test-runner` |
 
 ## Installation
 

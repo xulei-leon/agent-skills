@@ -1,5 +1,5 @@
 ---
-name: debug-analyst
+name: swd-debug-analyst
 description: "Use when diagnosing a bug, regression, flaky behavior, or production failure. Applies hypothesis-driven debugging, minimal reproduction, and discriminating checks to isolate root cause."
 license: MIT
 ---

@@ -1,5 +1,5 @@
 ---
-name: fixer
+name: swd-fixer
 description: "Use when implementing a confirmed bug fix or a narrowly scoped corrective patch. Prioritizes minimal change, reproducible verification, and regression safety."
 license: MIT
 ---

@@ -4,7 +4,7 @@
 Review or design software architecture — module boundaries, API contracts, data models, and technology decisions.
 
 ## Skill
-`.opencode/skills/architect/SKILL.md`
+`.opencode/skills/swd-architect/SKILL.md`
 
 ## Inputs
 - Target system, service, module, or change

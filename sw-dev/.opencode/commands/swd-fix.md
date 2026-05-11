@@ -4,7 +4,7 @@
 Apply a minimal, verified fix for a confirmed root cause using TDD — write a failing test first, then implement the fix.
 
 ## Skill
-`.opencode/skills/fixer/SKILL.md`
+`.opencode/skills/swd-fixer/SKILL.md`
 
 ## Inputs
 - Confirmed root cause or a reproducible failing behavior

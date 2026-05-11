@@ -4,7 +4,7 @@
 Design comprehensive test cases with mock strategies, parameterized tests, boundary analysis, and coverage goals.
 
 ## Skill
-`.opencode/skills/testcase-designer/SKILL.md`
+`.opencode/skills/swd-testcase-designer/SKILL.md`
 
 ## Inputs
 - Feature, module, API, or behavior under test

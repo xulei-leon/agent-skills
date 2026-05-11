@@ -4,7 +4,7 @@
 Identify code smells and safely refactor without changing external behavior.
 
 ## Skill
-`.opencode/skills/refactoring-analyst/SKILL.md`
+`.opencode/skills/swd-refactoring-analyst/SKILL.md`
 
 ## Inputs
 - Target file, module, or subsystem
