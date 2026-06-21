@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Confirm"
+  short_description: "Judge review comments and answer each one in a decision table."
+  default_prompt: "Use $review-confirm to review third-party feedback on a document or code change, judge each comment, and write a table-based confirmation with accept, partial, or reject decisions."

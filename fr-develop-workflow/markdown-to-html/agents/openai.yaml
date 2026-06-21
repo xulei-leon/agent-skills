@@ -1,0 +1,4 @@
+interface:
+  display_name: "MarkDown to HTML"
+  short_description: "Markdown to PDF-ready HTML slides"
+  default_prompt: "Use $markdown-to-html to convert this Markdown document into a single-file HTML slide deck ready for browser preview and PDF export."
