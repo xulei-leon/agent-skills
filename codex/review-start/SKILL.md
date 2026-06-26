@@ -22,6 +22,17 @@ Claude Code fallback command shape:
 opencode -m "zhipuai/glm-5.2" --agent build run "<prompt>"
 ```
 
+## Timeout Policy
+
+Treat `opencode` and Claude Code review commands as long-running LLM orchestration commands, not short local commands.
+
+- Use a long command timeout when the execution environment supports it: at least 10 minutes for ordinary document reviews, and 20-30 minutes for large code reviews, commit reviews, or repository-wide diffs.
+- If a command times out at the shell/tool layer, do not immediately assume the review failed. First check whether the expected report file now exists and is non-empty.
+- If the report file exists and is non-empty after a timeout, treat that reviewer as completed and report that the command timed out from the caller's perspective but produced the required report.
+- If the report file is still missing or empty, poll for it before falling back: check the expected report path every 30 seconds for up to 10 minutes, or up to 20 minutes for large code reviews, commit reviews, or repository-wide diffs.
+- During polling, treat the review as completed as soon as the expected report file exists and is non-empty.
+- Only run the Claude fallback after confirming the Claude-side report is still missing or empty.
+
 ## Review Type
 
 Choose the review type from the user's wording:
@@ -65,7 +76,7 @@ docs/4-Reviews/api-code-review-by-ark-code-latest.md
 3. Compute the output path for each model from the original file stem, suffix, and normalized model name.
 4. Run `opencode` for `deepseek/deepseek-v4-pro` when doing document review, or `deepseek/deepseek-v4-pro` when doing code review.
 5. Run Claude Code for `ark-code-latest`.
-6. If the Claude Code command returns a non-zero exit code, prints an error indicating it did not complete, or times out before finishing, retry the same prompt with running `opencode` for `zhipuai/glm-5.2`.
+6. If the Claude Code command returns a non-zero exit code, prints an error indicating it did not complete, or times out before finishing, apply the Timeout Policy checks before retrying the same prompt with running `opencode` for `zhipuai/glm-5.2`.
 7. Keep the Claude-side output path unchanged when using the fallback: write to the `...-by-ark-code-latest.md` report path unless the user explicitly asks to name reports by the actual fallback model.
 8. Ensure each review writes only its own report file.
 9. After both commands finish, verify both report files exist and are non-empty.

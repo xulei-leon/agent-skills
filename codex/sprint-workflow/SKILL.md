@@ -1,15 +1,17 @@
 ---
-name: fr-develop-workflow
-description: "Use when a user asks for an FR/Sprint lifecycle, FR develop workflow, document-to-code delivery, or review-confirm gated implementation across configurable project document paths."
+name: sprint-workflow
+description: "Use when a user asks for a Sprint lifecycle, FR develop workflow, document-to-code delivery, multi-sprint sequential development, or review-confirm gated implementation across configurable project document paths."
 ---
 
-# FR Develop Workflow
+# Sprint Workflow
 
 ## Overview
 
-Use this skill to coordinate a delivery loop from FR requirements to reviewed implementation. This is an orchestration skill: reuse `review-start` for independent reviews and `review-confirm` for point-by-point review decisions.
+Use this skill to coordinate one or more Sprint delivery loops from FR requirements to reviewed implementation. This is an orchestration skill: reuse `review-start` for independent reviews and `review-confirm` for point-by-point review decisions.
 
 ## Required Flow
+
+For a single Sprint, run the complete FR develop workflow below.
 
 Follow these phases in order unless the user explicitly asks to skip or resume at a named phase:
 
@@ -28,6 +30,14 @@ Follow these phases in order unless the user explicitly asks to skip or resume a
 Do not start code implementation until document review confirmation is complete and accepted document changes are applied, unless the user explicitly overrides this gate.
 
 Do not modify code based directly on code review reports before `review-confirm` has judged the review comments, unless the user explicitly overrides this gate.
+
+## Multiple Sprint Development
+
+When the user asks to develop multiple Sprints, process them strictly in sequence. For each Sprint, run the full FR develop workflow from document authoring through review confirmation, implementation, code review confirmation, verification, and commit.
+
+Do not develop multiple Sprints in parallel. Do not start a later Sprint until the current Sprint has completed every required gate or the user has explicitly skipped a gate.
+
+If any Sprint stops for any reason, including missing inputs, failed review integration, failed verification, unresolved blockers, or user cancellation, stop the whole multi-Sprint run. Record the stopped Sprint, phase, reason, and remaining unstarted Sprint targets in workflow state and the final response.
 
 ## Path Configuration
 
@@ -97,6 +107,18 @@ Record:
 - implementation target
 - verification commands and results
 - open blockers or explicit user overrides
+
+## Goal Mode Integration
+
+Goal mode is optional. Do not require it for this workflow.
+
+Use Codex goal mode only when the user explicitly asks to run the Sprint workflow as a goal, long-running objective, or auto-continuing task. The goal objective should cover the full Sprint delivery lifecycle, not an individual phase.
+
+Do not use goal state as a substitute for workflow records. Continue to record phase state, review outputs, confirmation decisions, verification results, blockers, and commit status in the active FR/Sprint documents, review-confirm documents, and final response.
+
+Mark the goal complete only after all Sprint Workflow completion criteria are satisfied, including verification and the final commit unless the user explicitly skipped that gate.
+
+Mark the goal blocked only when progress is genuinely impossible without user input or an external state change, and after the platform's blocked-condition threshold is satisfied. Ordinary review findings, failed tests, missing reports, or implementation issues should be handled through the normal workflow gates first.
 
 ## Document Authoring
 

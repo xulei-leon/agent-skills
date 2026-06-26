@@ -1,4 +1,0 @@
-interface:
-  display_name: "FR Develop Workflow"
-  short_description: "Run FR docs through review and code delivery"
-  default_prompt: "Use $fr-develop-workflow to run the FR/Sprint document, review, implementation, and code review lifecycle."

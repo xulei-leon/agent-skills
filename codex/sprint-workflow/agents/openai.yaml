@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sprint Workflow"
+  short_description: "Run Sprint docs through review and delivery"
+  default_prompt: "Use $sprint-workflow to run the Sprint document, review, implementation, and code review lifecycle."

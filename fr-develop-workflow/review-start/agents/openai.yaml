@@ -1,4 +1,0 @@
-interface:
-  display_name: "Review Start"
-  short_description: "Run dual-model opencode reviews"
-  default_prompt: "Use $review-start to review a document or code file with opencode and write reports."
