@@ -7,7 +7,10 @@ description: Use when the user asks to review documents, markdown, specs, plans,
 
 ## Overview
 
-Run two independent reviews for the target file and save both review reports under `docs/4-Reviews/`: one with `opencode` and one with Claude Code. If the Claude Code command errors or times out before completing, retry that same review with `opencode` using model `volcengine/doubao-seed-2-1-pro-260628`.
+Run two independent reviews for the target file and save both review reports under `docs/4-Reviews/`. Each review has a primary model and a fallback model:
+
+- First review: primary `opencode-go/deepseek-v4-pro` via `opencode`; fallback `deepseek/deepseek-v4-pro` via `opencode`.
+- Second review: primary `ark-code-latest` via Claude Code; fallback `opencode-go/glm-5.2` via `opencode`.
 
 Use these exact command shapes:
 
@@ -16,10 +19,10 @@ opencode -m "<model>" --agent build run "<prompt>"
 claude -p --model <model> --permission-mode auto "<prompt>"
 ```
 
-Claude Code fallback command shape:
+Fallback command shape:
 
 ```bash
-opencode -m "volcengine/doubao-seed-2-1-pro-260628" --agent build run "<prompt>"
+opencode -m "<fallback-model>" --agent build run "<prompt>"
 ```
 
 ## Timeout Policy
@@ -31,7 +34,7 @@ Treat `opencode` and Claude Code review commands as long-running LLM orchestrati
 - If the report file exists and is non-empty after a timeout, treat that reviewer as completed and report that the command timed out from the caller's perspective but produced the required report.
 - If the report file is still missing or empty, poll for it before falling back: check the expected report path every 30 seconds for up to 10 minutes, or up to 20 minutes for large code reviews, commit reviews, or repository-wide diffs.
 - During polling, treat the review as completed as soon as the expected report file exists and is non-empty.
-- Only run the Claude fallback after confirming the Claude-side report is still missing or empty.
+- Only run a review's fallback after confirming that review's report is still missing or empty.
 
 ## Review Type
 
@@ -39,8 +42,8 @@ Choose the review type from the user's wording:
 
 | User intent | Report suffix | Models |
 |---|---|---|
-| Document review, docs review, spec review, markdown review, plan review | `review` | `deepseek/deepseek-v4-pro` via `opencode` (report name: `deepseek-v4-pro`), `ark-code-latest` via Claude Code with `volcengine/doubao-seed-2-1-pro-260628` via `opencode` fallback |
-| Code review, implementation review, source review, diff review, PR-style review | `code-review` | `deepseek/deepseek-v4-pro` via `opencode`, `ark-code-latest` via Claude Code with `volcengine/doubao-seed-2-1-pro-260628` via `opencode` fallback |
+| Document review, docs review, spec review, markdown review, plan review | `review` | `opencode-go/deepseek-v4-pro` via `opencode` with `deepseek/deepseek-v4-pro` via `opencode` fallback; `ark-code-latest` via Claude Code with `opencode-go/glm-5.2` via `opencode` fallback |
+| Code review, implementation review, source review, diff review, PR-style review | `code-review` | `opencode-go/deepseek-v4-pro` via `opencode` with `deepseek/deepseek-v4-pro` via `opencode` fallback; `ark-code-latest` via Claude Code with `opencode-go/glm-5.2` via `opencode` fallback |
 
 If the user does not clearly specify document review or code review, infer from the file type and content. Treat source files, patches, and diffs as code review. Treat `.md`, `.txt`, `.docx`, specs, plans, and prose-heavy artifacts as document review.
 
@@ -63,9 +66,9 @@ Normalize `<model-name>` by replacing `/` with `-`.
 Examples:
 
 ```text
-docs/4-Reviews/design-review-by-deepseek-v4-pro.md
+docs/4-Reviews/design-review-by-opencode-go-deepseek-v4-pro.md
 docs/4-Reviews/design-review-by-ark-code-latest.md
-docs/4-Reviews/api-code-review-by-deepseek-v4-pro.md
+docs/4-Reviews/api-code-review-by-opencode-go-deepseek-v4-pro.md
 docs/4-Reviews/api-code-review-by-ark-code-latest.md
 ```
 
@@ -74,12 +77,13 @@ docs/4-Reviews/api-code-review-by-ark-code-latest.md
 1. Identify the target file path and review type.
 2. Create `docs/4-Reviews/` if it does not exist.
 3. Compute the output path for each model from the original file stem, suffix, and normalized model name.
-4. Run `opencode` for `deepseek/deepseek-v4-pro` when doing document review, or `deepseek/deepseek-v4-pro` when doing code review.
+4. Run `opencode` for `opencode-go/deepseek-v4-pro`.
 5. Run Claude Code for `ark-code-latest`.
-6. If the Claude Code command returns a non-zero exit code, prints an error indicating it did not complete, or times out before finishing, apply the Timeout Policy checks before retrying the same prompt with running `opencode` for `volcengine/doubao-seed-2-1-pro-260628`.
-7. Keep the Claude-side output path unchanged when using the fallback: write to the `...-by-ark-code-latest.md` report path unless the user explicitly asks to name reports by the actual fallback model.
-8. Ensure each review writes only its own report file.
-9. After both commands finish, verify both report files exist and are non-empty.
+6. If the first review command returns a non-zero exit code, prints an error indicating it did not complete, or times out before finishing, apply the Timeout Policy checks before retrying the same prompt with `opencode` for `deepseek/deepseek-v4-pro`.
+7. If the Claude Code command returns a non-zero exit code, prints an error indicating it did not complete, or times out before finishing, apply the Timeout Policy checks before retrying the same prompt with `opencode` for `opencode-go/glm-5.2`.
+8. Keep the primary output path unchanged when using a fallback unless the user explicitly asks to name reports by the actual fallback model.
+9. Ensure each review writes only its own report file.
+10. After both commands finish, verify both report files exist and are non-empty.
 
 ## Prompt Template
 
@@ -110,12 +114,12 @@ Requirements:
 Document review:
 
 ```bash
-opencode -m "deepseek/deepseek-v4-pro" --agent build run "Review the file: docs/spec.md
+opencode -m "opencode-go/deepseek-v4-pro" --agent build run "Review the file: docs/spec.md
 
 Review type: document review
 
 Write the complete review report to:
-docs/4-Reviews/spec-review-by-deepseek-v4-pro.md
+docs/4-Reviews/spec-review-by-opencode-go-deepseek-v4-pro.md
 
 Requirements:
 - Create parent directories if needed.
@@ -152,12 +156,12 @@ Requirements:
 Code review:
 
 ```bash
-opencode -m "deepseek/deepseek-v4-pro" --agent build run "Review the file: src/app.ts
+opencode -m "opencode-go/deepseek-v4-pro" --agent build run "Review the file: src/app.ts
 
 Review type: code review
 
 Write the complete review report to:
-docs/4-Reviews/app-code-review-by-deepseek-v4-pro.md
+docs/4-Reviews/app-code-review-by-opencode-go-deepseek-v4-pro.md
 
 Requirements:
 - Create parent directories if needed.
@@ -193,4 +197,4 @@ Requirements:
 
 ## Completion
 
-Report the two generated file paths to the user. If Claude Code failed but the `volcengine/doubao-seed-2-1-pro-260628` via `opencode` fallback succeeded, state that the second report was generated by fallback while preserving the configured output path. If either review ultimately fails or a report file is missing or empty, state which model path failed and include the relevant command output.
+Report the two generated file paths to the user. If a fallback succeeded, state which review used fallback while preserving the configured output path. If either review ultimately fails or a report file is missing or empty, state which model path failed and include the relevant command output.
